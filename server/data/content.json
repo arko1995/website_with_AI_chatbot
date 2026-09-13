@@ -1,0 +1,112 @@
+{
+  "settings": {
+    "brand": "SkylineDB3",
+    "eyebrow": "Architecture · Planning · Visualization · Build Strategy",
+    "heroTitle": "Make the vision buildable.",
+    "heroBody": "Architecture, planning, documentation and visualization for residential, commercial and development projects — engineered from first idea to construction-ready decisions.",
+    "location": "3622 Central Ave, Memphis, TN",
+    "email": "",
+    "whatsappNumber": ""
+  },
+  "services": [
+    {
+      "slug": "land-planning-masterplanning",
+      "index": "01",
+      "title": "Land Planning & Masterplanning",
+      "short": "Feasibility, site logic, infrastructure flow and development-scale planning.",
+      "body": "Turn raw land and early-stage development ideas into a coherent spatial strategy. SkylineDB3 evaluates site conditions, constraints, zoning context and development potential before shaping the masterplan.",
+      "features": ["Site analysis & feasibility", "Masterplanning", "Residential, commercial & mixed-use layouts", "Development strategy"]
+    },
+    {
+      "slug": "architectural-design-documentation",
+      "index": "02",
+      "title": "Architectural Design & Documentation",
+      "short": "Concept design through detailed, construction-ready drawing sets.",
+      "body": "Move from concept to coordinated architectural documentation with a process that balances spatial quality, technical requirements and buildability.",
+      "features": ["Schematic design", "Design development", "Construction documents", "Construction support"]
+    },
+    {
+      "slug": "cost-value-engineering",
+      "index": "03",
+      "title": "Cost & Value Engineering",
+      "short": "Early cost intelligence to keep design ambition aligned with the budget.",
+      "body": "Cost decisions are strongest when they happen before construction. SkylineDB3 helps teams forecast costs, compare options and protect the design intent while reducing avoidable overruns.",
+      "features": ["Pre-construction estimation", "Material strategy", "Value engineering", "Budget alignment"]
+    },
+    {
+      "slug": "visualization-marketing",
+      "index": "04",
+      "title": "3D Visualization & Marketing",
+      "short": "High-fidelity visual assets that make a future space tangible before it exists.",
+      "body": "From photoreal renders to immersive walkthroughs, visualization helps owners, developers and investors understand the project — and communicate it clearly to others.",
+      "features": ["Exterior rendering", "Interior rendering", "Interactive walkthroughs", "Investor & pre-sales assets"]
+    }
+  ],
+  "projects": [
+    {
+      "slug": "foundry55",
+      "name": "Foundry55",
+      "type": "Masterplanned Residential",
+      "tagline": "Industrial living, resolved at development scale.",
+      "metric": "Planning + Architecture",
+      "visual": "grid"
+    },
+    {
+      "slug": "vertex-villa",
+      "name": "The Vertex Villa",
+      "type": "Residential Architecture",
+      "tagline": "A high-efficiency luxury residence shaped by light and environmental integration.",
+      "metric": "4,500 sq ft · 4 bed · 5.5 bath",
+      "visual": "frame"
+    },
+    {
+      "slug": "verde-private-estate",
+      "name": "Verde Private Estate",
+      "type": "Private Residential",
+      "tagline": "A private estate concept balancing strong geometry with landscape.",
+      "metric": "Architecture + Visualization",
+      "visual": "arc"
+    }
+  ],
+  "posts": [
+    {
+      "slug": "before-you-hire-an-architect",
+      "title": "What to Prepare Before You Hire an Architect",
+      "excerpt": "A short checklist that makes the first design conversation more productive — even if the project is still only an idea.",
+      "category": "Project Guides",
+      "publishedAt": "2026-08-20",
+      "readingTime": "5 min",
+      "body": [
+        "You do not need a finished brief before speaking with an architect. You do, however, get a better first conversation when you can describe the outcome you want, the site you are working with, and the constraints that matter most.",
+        "Start with four things: location, approximate scope, target timing and a realistic budget range. If you have a survey, photos, sketches, precedent images or existing drawings, bring them — but do not delay the conversation because those materials are incomplete.",
+        "The goal of an early architectural conversation is not to have every answer. It is to identify the right questions, expose major constraints and define the next useful piece of work."
+      ]
+    },
+    {
+      "slug": "design-buildability-budget",
+      "title": "Why Buildability and Budget Belong in the Design Conversation",
+      "excerpt": "Beautiful drawings are only useful when the project can move through pricing, documentation and construction without avoidable surprises.",
+      "category": "Cost Strategy",
+      "publishedAt": "2026-07-14",
+      "readingTime": "4 min",
+      "body": [
+        "Design quality and cost discipline are not opposites. The strongest projects treat budget, construction logic and spatial ambition as connected design inputs from the beginning.",
+        "Early cost feedback helps the team decide where complexity creates real value and where a simpler solution can protect both the budget and the intent. This is especially important before detailed documentation locks expensive decisions in place.",
+        "Value engineering works best as a design activity — not as a late-stage exercise in removing features after pricing arrives."
+      ]
+    },
+    {
+      "slug": "masterplanning-first-questions",
+      "title": "The First Questions to Ask Before Masterplanning a Site",
+      "excerpt": "Before drawing roads, parcels or buildings, understand the forces that decide what the site can realistically become.",
+      "category": "Development",
+      "publishedAt": "2026-06-03",
+      "readingTime": "6 min",
+      "body": [
+        "Masterplanning starts with constraints and opportunity, not with a pretty site plan. Access, topography, drainage, zoning, utilities, market assumptions and phasing can all reshape the development strategy.",
+        "The early objective is to discover which variables are fixed and which can be designed around. Once those are visible, density, circulation, open space and building placement become much more informed decisions.",
+        "A clear feasibility stage can prevent a development team from spending time refining a concept that conflicts with the realities of the site."
+      ]
+    }
+  ]
+}
