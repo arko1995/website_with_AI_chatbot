@@ -13,6 +13,10 @@ function sessionSecret() {
   return secret;
 }
 
+function useSecureCookie() {
+  return String(process.env.COOKIE_SECURE || '').toLowerCase() === 'true';
+}
+
 export function hashPassword(password) {
   const salt = crypto.randomBytes(16).toString('hex');
   const hash = crypto.scryptSync(password, salt, 64).toString('hex');
@@ -68,12 +72,12 @@ export function createAdminSession(user) {
 }
 
 export function setAdminSessionCookie(res, token) {
-  const secure = process.env.NODE_ENV === 'production' ? '; Secure' : '';
+  const secure = useSecureCookie() ? '; Secure' : '';
   res.setHeader('Set-Cookie', `${SESSION_COOKIE}=${encodeURIComponent(token)}; Path=/; HttpOnly; SameSite=Lax; Max-Age=${SESSION_SECONDS}${secure}`);
 }
 
 export function clearAdminSessionCookie(res) {
-  const secure = process.env.NODE_ENV === 'production' ? '; Secure' : '';
+  const secure = useSecureCookie() ? '; Secure' : '';
   res.setHeader('Set-Cookie', `${SESSION_COOKIE}=; Path=/; HttpOnly; SameSite=Lax; Max-Age=0${secure}`);
 }
 
