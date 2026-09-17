@@ -18,5 +18,13 @@ const leadSchema = new mongoose.Schema({
   createdAt: { type: Date, default: Date.now }
 }, { versionKey: false });
 
+const adminUserSchema = new mongoose.Schema({
+  email: { type: String, required: true, unique: true, lowercase: true, trim: true },
+  passwordHash: { type: String, required: true },
+  role: { type: String, default: 'admin' },
+  createdAt: { type: Date, default: Date.now }
+}, { versionKey: false });
+
 export const SiteContent = mongoose.models.SiteContent || mongoose.model('SiteContent', siteContentSchema);
 export const Lead = mongoose.models.Lead || mongoose.model('Lead', leadSchema);
+export const AdminUser = mongoose.models.AdminUser || mongoose.model('AdminUser', adminUserSchema);
