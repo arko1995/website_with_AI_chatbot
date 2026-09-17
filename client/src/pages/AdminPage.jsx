@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { api } from '../api.js';
+import '../admin.css';
 
 const emptyPost = {
   slug: '', title: '', excerpt: '', category: 'Project Guides',
