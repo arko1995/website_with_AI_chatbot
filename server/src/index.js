@@ -7,12 +7,25 @@ import { connectDatabase, databaseConnected } from './db.js';
 import { Lead } from './models.js';
 import { getContent, saveContent } from './store.js';
 import { askPythonAgent, fallbackReply } from './chat.js';
+import {
+  authenticateAdmin,
+  clearAdminSessionCookie,
+  createAdminSession,
+  ensureInitialAdmin,
+  requireAdmin,
+  setAdminSessionCookie
+} from './auth.js';
 
 const app = express();
 const port = Number(process.env.PORT || 5000);
+const host = process.env.HOST || '127.0.0.1';
 const here = path.dirname(fileURLToPath(import.meta.url));
 
-app.use(cors({ origin: process.env.CLIENT_ORIGIN || 'http://localhost:5173' }));
+app.set('trust proxy', 1);
+app.use(cors({
+  origin: process.env.CLIENT_ORIGIN || 'http://localhost:5173',
+  credentials: true
+}));
 app.use(express.json({ limit: '2mb' }));
 
 app.get('/api/health', (req, res) => {
@@ -73,19 +86,29 @@ app.post('/api/chat', async (req, res, next) => {
   } catch (error) { next(error); }
 });
 
-function authorized(req) {
-  const supplied = req.get('x-admin-key') || '';
-  const expected = process.env.ADMIN_KEY || 'change-me';
-  return Boolean(supplied) && supplied === expected;
-}
+app.post('/api/auth/login', async (req, res, next) => {
+  try {
+    const user = await authenticateAdmin(req.body?.email, req.body?.password);
+    if (!user) return res.status(401).json({ error: 'Invalid email or password.' });
+    setAdminSessionCookie(res, createAdminSession(user));
+    res.json({ user: { email: user.email, role: user.role } });
+  } catch (error) { next(error); }
+});
 
-app.get('/api/admin/content', async (req, res, next) => {
-  if (!authorized(req)) return res.status(401).json({ error: 'Unauthorized. Check ADMIN_KEY.' });
+app.post('/api/auth/logout', (req, res) => {
+  clearAdminSessionCookie(res);
+  res.json({ ok: true });
+});
+
+app.get('/api/auth/me', requireAdmin, (req, res) => {
+  res.json({ user: { email: req.admin.email, role: 'admin' } });
+});
+
+app.get('/api/admin/content', requireAdmin, async (req, res, next) => {
   try { res.json(await getContent()); } catch (error) { next(error); }
 });
 
-app.put('/api/admin/content', async (req, res, next) => {
-  if (!authorized(req)) return res.status(401).json({ error: 'Unauthorized. Check ADMIN_KEY.' });
+app.put('/api/admin/content', requireAdmin, async (req, res, next) => {
   const incoming = req.body;
   if (!incoming || !Array.isArray(incoming.posts) || !Array.isArray(incoming.services) || !Array.isArray(incoming.projects)) {
     return res.status(400).json({ error: 'Invalid content payload.' });
@@ -96,7 +119,14 @@ app.put('/api/admin/content', async (req, res, next) => {
   } catch (error) { next(error); }
 });
 
-// In production, `npm run build` creates client/dist and Express can serve it.
+app.get('/api/admin/leads', requireAdmin, async (req, res, next) => {
+  try {
+    if (!databaseConnected()) return res.json({ leads: [] });
+    const leads = await Lead.find().sort({ createdAt: -1 }).limit(250).lean();
+    res.json({ leads });
+  } catch (error) { next(error); }
+});
+
 const clientDist = path.resolve(here, '../../client/dist');
 app.use(express.static(clientDist));
 app.get('*', (req, res, next) => {
@@ -106,8 +136,9 @@ app.get('*', (req, res, next) => {
 
 app.use((error, req, res, next) => {
   console.error(error);
-  res.status(500).json({ error: 'Server error' });
+  res.status(500).json({ error: process.env.NODE_ENV === 'production' ? 'Server error' : error.message });
 });
 
 await connectDatabase();
-app.listen(port, () => console.log(`[server] http://localhost:${port}`));
+await ensureInitialAdmin();
+app.listen(port, host, () => console.log(`[server] http://${host}:${port}`));
