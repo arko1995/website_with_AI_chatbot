@@ -9,8 +9,9 @@ export default function Footer({ location = 'Memphis, TN' }) {
       </div>
       <div className="footer-links">
         <Link to="/insights">Insights</Link>
-        <a href="/#services">Services</a>
-        <a href="/#contact">Start a project</a>
+        <a href={`${import.meta.env.BASE_URL}#services`}>Services</a>
+        <a href={`${import.meta.env.BASE_URL}#contact`}>Start a project</a>
+        <Link to="/admin">Admin</Link>
       </div>
       <div className="footer-meta">
         <span>{location}</span>
