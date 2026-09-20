@@ -8,6 +8,8 @@ import ChatWidget from '../components/ChatWidget.jsx';
 import Loading from '../components/Loading.jsx';
 import { api } from '../api.js';
 import { scrollToHash } from '../utils.js';
+import ShowcaseSlider from '../components/ShowcaseSlider.jsx';
+
 
 export default function HomePage() {
   const [content, setContent] = useState(null);
@@ -42,12 +44,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="hero-visual" aria-hidden="true">
-            <div className="hero-plate plate-one" />
-            <div className="hero-plate plate-two" />
-            <div className="hero-building">
-              <span className="window w1"/><span className="window w2"/><span className="window w3"/><span className="window w4"/>
-            </div>
-            <div className="hero-note"><span>FIG. 01</span><strong>SPACE / STRUCTURE / VALUE</strong></div>
+            <ShowcaseSlider />
           </div>
         </div>
         <div className="trust-strip">
