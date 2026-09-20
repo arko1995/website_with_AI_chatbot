@@ -46,29 +46,29 @@ const LeadershipTeam = () => {
               </p>
             </div>
           </div>
-        </div>
 
-        <div className="leadership-grid">
-          {teamMembers.map((member, index) => {
-            <article className="team-member" key={teamMembers.name}>
-              <div className="team-image">
-                <img
-                  src={`${basePath}${member.image}`}
-                  alt={`${member.name}, ${member.role}`}
-                />
+          <div className="leadership-grid">
+            {teamMembers.map((member, index) => (
+              <article className="team-member" key={member.name}>
+                <div className="team-image">
+                  <img
+                    src={`${basePath}${member.image}`}
+                    alt={`${member.name}, ${member.role}`}
+                  />
 
-                <span className="team-index">
-                  {String(index + 1).padStart(2, 0)}
-                </span>
-              </div>
+                  <span className="team-index">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                </div>
 
-              <div className="team-copy">
-                <span>{member.role}</span>
-                <h3>{member.name}</h3>
-                <p>{member.description}</p>
-              </div>
-            </article>;
-          })}
+                <div className="team-copy">
+                  <span>{member.role}</span>
+                  <h3>{member.name}</h3>
+                  <p>{member.description}</p>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
     </div>
