@@ -9,7 +9,7 @@ import Loading from '../components/Loading.jsx';
 import { api } from '../api.js';
 import { scrollToHash } from '../utils.js';
 import ShowcaseSlider from '../components/ShowcaseSlider.jsx';
-
+import ExecutionMatrix from '../components/ExecutionMatrix.jsx';
 
 export default function HomePage() {
   const [content, setContent] = useState(null);
@@ -73,7 +73,7 @@ export default function HomePage() {
           ))}
         </div>
       </section>
-
+          <ExecutionMatrix />
       <section className="services-section" id="services">
         <div className="shell">
           <div className="section-heading split-heading">
