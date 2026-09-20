@@ -43,7 +43,7 @@ export default function HomePage() {
               <a className="text-link" href="#services">Explore capabilities ↓</a>
             </div>
           </div>
-          <div className="hero-visual" aria-hidden="true">
+          <div className="hero-visual">
             <ShowcaseSlider />
           </div>
         </div>
