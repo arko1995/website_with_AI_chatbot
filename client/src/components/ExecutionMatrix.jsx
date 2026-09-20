@@ -131,7 +131,7 @@ const ExecutionMatrix = () => {
         <div className="execution-journeys">
           {projectJourneys.map((journey) => (
             <article
-              className="execution-journey"
+              className={`execution-journey execution-${journey.id}`}
               key={journey.id}
             >
               <header className="journey-header">
