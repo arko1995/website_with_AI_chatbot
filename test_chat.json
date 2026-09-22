@@ -1,0 +1,17 @@
+{
+  "messages": [
+    {
+      "role": "user",
+      "content": "My name is Arko and I want to build a house in Dhaka."
+    },
+    {
+      "role": "assistant",
+      "content": "Understood. I can help with that project."
+    },
+    {
+      "role": "user",
+      "content": "What city did I say?"
+    }
+  ],
+  "context": {}
+}

@@ -26,8 +26,13 @@ GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
 client = genai.Client(api_key=GEMINI_API_KEY)
 
 
+class ChatMessage(BaseModel):
+    role: str
+    content: str
+
+
 class ChatRequest(BaseModel):
-    messages: list[dict[str, Any]] = Field(default_factory=list)
+    messages: list[ChatMessage] = Field(default_factory=list)
     context: dict[str, Any] = Field(default_factory=dict)
 
 
@@ -36,8 +41,8 @@ def compose_reply(payload: ChatRequest) -> str:
     contents = []
 
     for messages in payload.messages:
-        role = messages.get("role")
-        content = messages.get("content")
+        role = messages.role
+        content = messages.content
 
         if role == "user":
             gemini_role = "user"
