@@ -9,12 +9,18 @@ Run from this directory:
     pip install -r requirements.txt
     uvicorn main:app --reload --port 8000
 """
+
+import os
 from typing import Any
 
 from fastapi import FastAPI
+from google import genai
+from google.genai import types
 from pydantic import BaseModel, Field
 
 app = FastAPI(title="SkylineDB3 Project Assistant", version="1.0.0")
+
+GEMINI_MODEL = "gemini-3.8-flash"
 
 
 class ChatRequest(BaseModel):
