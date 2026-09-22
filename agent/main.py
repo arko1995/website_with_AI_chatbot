@@ -1,8 +1,4 @@
-"""SkylineDB3 Python AI service.
-
-This is intentionally provider-agnostic. Keep the MERN app stable and replace
-`compose_reply` with your LangGraph/LangChain/custom RAG or tool-calling agent.
-
+"""
 Run from this directory:
     python -m venv .venv
     source .venv/bin/activate       # Windows: .venv\\Scripts\\activate
@@ -22,6 +18,10 @@ app = FastAPI(title="SkylineDB3 Project Assistant", version="1.0.0")
 
 GEMINI_MODEL = "gemini-3.8-flash"
 
+GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
+
+client = genai.Client(api_key=GEMINI_API_KEY)
+
 
 class ChatRequest(BaseModel):
     messages: list[dict[str, Any]] = Field(default_factory=list)
@@ -29,16 +29,20 @@ class ChatRequest(BaseModel):
 
 
 def compose_reply(payload: ChatRequest) -> str:
-    """Swap this function for your real agent/RAG pipeline."""
-    last = payload.messages[-1].get("content", "") if payload.messages else ""
-    services = [item.get("title", "") for item in payload.context.get("services", [])]
-    service_text = ", ".join(filter(None, services))
-    return (
-        "I can help qualify this project for the SkylineDB3 team. "
-        f"You mentioned: {last!r}. "
-        f"Relevant studio capabilities include {service_text}. "
-        "What is the project location, approximate scale, current stage, and target timeline?"
+
+    last_message = payload.messages[-1].get("content", "") if payload.messages else ""
+
+    response = client.models.generate_content(
+        model=GEMINI_MODEL,
+        contents=last_message,
+        config=types.GenerateContentConfig(
+            system_instruction=(
+                "You are SkylineDB3's project assistant. "
+                "Be concise, helpful, and professional."
+            )
+        ),
     )
+    return response.text or "I couldn't generate a response"
 
 
 @app.get("/health")
