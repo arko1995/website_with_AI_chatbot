@@ -8,11 +8,14 @@ Run from this directory:
 
 import os
 from typing import Any
+from dotenv import load_dotenv
 
 from fastapi import FastAPI
 from google import genai
 from google.genai import types
 from pydantic import BaseModel, Field
+
+load_dotenv()
 
 app = FastAPI(title="SkylineDB3 Project Assistant", version="1.0.0")
 
@@ -30,11 +33,26 @@ class ChatRequest(BaseModel):
 
 def compose_reply(payload: ChatRequest) -> str:
 
-    last_message = payload.messages[-1].get("content", "") if payload.messages else ""
+    contents = []
+
+    for messages in payload.messages:
+        role = messages.get("role")
+        content = messages.get("content")
+
+        if role == "user":
+            gemini_role = "user"
+        elif role == "assistant":
+            gemini_role = "model"
+        else:
+            continue
+
+        contents.append(
+            types.Content(role=gemini_role, parts=[types.Part(text=content)])
+        )
 
     response = client.models.generate_content(
         model=GEMINI_MODEL,
-        contents=last_message,
+        contents=contents,
         config=types.GenerateContentConfig(
             system_instruction=(
                 "You are SkylineDB3's project assistant. "
