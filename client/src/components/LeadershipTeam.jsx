@@ -2,21 +2,21 @@ const teamMembers = [
   {
     name: "Ashif Jahan",
     role: "CEO",
-    image: "images/team/ashif-jahan.webp",
+    image: "images/team/istockphoto-2285343735-1024x1024.webp",
     description:
       "Leading SkylineDB3 across strategy, client relationships and project direction.",
   },
   {
     name: "Jeff Blackledge",
     role: "Senior Architect",
-    image: "images/team/jeff-blackledge.webp",
+    image: "images/team/istockphoto-2285343735-1024x1024.webp",
     description:
       "Focused on architectural thinking, design development and technical execution.",
   },
   {
     name: "Core Support Team",
     role: "Architecture · Delivery · Coordination",
-    image: "images/team/core-team.webp",
+    image: "images/team/istockphoto-2285343735-1024x1024.webp",
     description:
       "Supporting projects through coordination, documentation and delivery.",
   },
