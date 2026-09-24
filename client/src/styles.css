@@ -953,3 +953,260 @@
   font-size: 13px;
   }
 }
+
+/* Process */
+
+.process-section {
+  padding: 120px 0;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.process-heading {
+  max-width: 900px;
+}
+
+.process-heading h2 {
+  max-width: 780px;
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(44px, 5vw, 76px);
+  font-weight: 400;
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+}
+
+/* Tabs */
+
+.process-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  margin-top: 64px;
+  border-bottom: 1px solid var(--line);
+}
+
+.process-tab {
+  position: relative;
+
+  padding: 22px 24px;
+
+  border: 0;
+  background: transparent;
+
+  color: var(--muted);
+  text-align: left;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    color 0.25s ease,
+    background 0.25s ease;
+}
+
+.process-tab + .process-tab {
+  border-left: 1px solid var(--line);
+}
+
+.process-tab > span {
+  display: block;
+  margin-bottom: 8px;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.process-tab::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+
+  height: 3px;
+
+  background: var(--ink);
+
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.process-tab:hover {
+  color: var(--ink);
+  background: var(--paper-2);
+}
+
+.process-tab.is-active {
+  color: var(--ink);
+}
+
+.process-tab.is-active::after {
+  transform: scaleX(1);
+}
+
+/* Steps */
+
+.process-steps {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+
+  margin-top: 72px;
+}
+
+/* horizontal timeline */
+
+.process-steps::before {
+  content: "";
+
+  position: absolute;
+  top: 17px;
+  left: 17px;
+  right: 17px;
+
+  height: 1px;
+  background: var(--line);
+}
+
+.process-step {
+  position: relative;
+  z-index: 1;
+
+  padding-right: 28px;
+}
+
+/*
+  Five-step workflows use five columns.
+  Six-step workflow naturally fills all six.
+*/
+
+
+
+.process-step-number {
+  width: 35px;
+  height: 35px;
+
+  display: grid;
+  place-items: center;
+
+  margin-bottom: 30px;
+
+  border: 1px solid var(--ink);
+  border-radius: 50%;
+
+  background: var(--paper);
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.process-step:first-child .process-step-number {
+  background: var(--acid);
+}
+
+.process-step-content {
+  max-width: 190px;
+}
+
+.process-step-content h3 {
+  min-height: 48px;
+  margin: 0 0 14px;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.process-step-content p {
+  margin: 0;
+
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+@media (max-width:680px){
+  .process-section {
+  padding: 80px 0;
+}
+
+.process-heading h2 {
+  font-size: 42px;
+}
+
+.process-tabs {
+  grid-template-columns: 1fr;
+  margin-top: 42px;
+  border-top: 1px solid var(--line);
+}
+
+.process-tab {
+  padding: 17px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.process-tab + .process-tab {
+  border-left: 0;
+}
+
+.process-tab > span {
+  display: inline-block;
+  width: 34px;
+  margin: 0;
+}
+
+.process-tab::after {
+  display: none;
+}
+
+.process-tab.is-active {
+  padding-left: 12px;
+  background: var(--acid);
+}
+
+.process-steps {
+  display: block;
+  margin-top: 48px;
+}
+
+.process-steps::before {
+  top: 17px;
+  bottom: 20px;
+  left: 17px;
+  right: auto;
+
+  width: 1px;
+  height: auto;
+}
+
+.process-step {
+  display: grid;
+  grid-template-columns: 35px 1fr;
+  gap: 22px;
+
+  padding: 0 0 38px;
+}
+
+.process-step-number {
+  margin: 0;
+}
+
+.process-step-content {
+  max-width: 100%;
+}
+
+.process-step-content h3 {
+  min-height: 0;
+  margin-bottom: 8px;
+  font-size: 20px;
+}
+}

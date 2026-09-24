@@ -37,7 +37,12 @@ export default function ProcessSection({ process }) {
           ))}
         </div>
 
-        <div className="process-steps">
+        <div
+          className="process-steps"
+          style={{
+            gridTemplateColumns: `repeat(${activeProcess.steps.length}, 1fr)`,
+          }}
+        >
           {activeProcess.steps.map((step, index) => (
             <article className="process-step" key={step.title}>
               <div className="process-step-number">
