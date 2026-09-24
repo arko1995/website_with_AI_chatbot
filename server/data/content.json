@@ -136,5 +136,89 @@
         "A clear feasibility stage can prevent a development team from spending time refining a concept that conflicts with the realities of the site."
       ]
     }
-  ]
+  ],
+  "process": [
+  {
+    "slug": "new-build",
+    "title": "New Build",
+    "steps": [
+      {
+        "title": "Consultation",
+        "description": "Establishing the core vision, site feasibility, and budget strategy for your custom home or new commercial development."
+      },
+      {
+        "title": "Schematic Design",
+        "description": "Translating initial ideas into foundational concepts, focusing on massing, site placement, and overall structural scale."
+      },
+      {
+        "title": "2D Layout",
+        "description": "Engineering the precise technical floor plans to optimize spatial flow, usability, and municipal code compliance."
+      },
+      {
+        "title": "Basic 3D Model",
+        "description": "Building an accurate digital representation of the structure to validate the design, coordinate spatial elements, and ensure proper rooflines and scale."
+      },
+      {
+        "title": "Construction Documents (CDs)",
+        "description": "Drafting the exact, permit-ready technical blueprints and specifications required by the general contractor to build the project perfectly."
+      }
+    ]
+  },
+  {
+    "slug": "renovation-remodel-as-builts",
+    "title": "Renovation, Remodel & As-Builts",
+    "steps": [
+      {
+        "title": "Strategic Consultation",
+        "description": "Defining the exact scope of the remodel, budget constraints, and municipal zoning requirements before any physical work begins."
+      },
+      {
+        "title": "Site Survey & Data Capture",
+        "description": "Deploying precise measuring tools to capture the exact dimensions, structural elements, and existing conditions of the physical site."
+      },
+      {
+        "title": "As-Built Documentation",
+        "description": "Drafting highly accurate 2D floor plans and existing-condition data to serve as the flawless baseline for your renovation."
+      },
+      {
+        "title": "Proposed Design & Demolition Plans",
+        "description": "Developing the new layout, indicating exactly what structural elements will be removed, and mapping the optimized spatial flow."
+      },
+      {
+        "title": "Basic 3D Model",
+        "description": "Building a clean, functional digital model of the newly proposed layout to validate the design and spatial flow before final engineering."
+      },
+      {
+        "title": "Construction Documents & Permitting",
+        "description": "Finalizing the technical blueprints and submitting the complete drawing set to the city for expedited permit approval."
+      }
+    ]
+  },
+  {
+    "slug": "3d-visualization",
+    "title": "3D Visualization",
+    "steps": [
+      {
+        "title": "Asset Collection",
+        "description": "We take your finalized 2D blueprints, sketches, or CAD files and review the specific aesthetic goals for your marketing or investor pitch."
+      },
+      {
+        "title": "Geometry & \"Clay\" Modeling",
+        "description": "Building the foundational 3D geometry of the space without textures, allowing you to approve the camera angles, lighting, and spatial proportions."
+      },
+      {
+        "title": "Material & Texture Integration",
+        "description": "Applying lifelike materials, landscaping, interior furnishings, and accurate lighting scenarios to bring the digital twin to life."
+      },
+      {
+        "title": "Client Review & Refinement",
+        "description": "You review the high-resolution drafts to ensure the finishes, mood, and branding perfectly match your vision."
+      },
+      {
+        "title": "Final Photorealistic Delivery",
+        "description": "Handing over the final, market-ready exterior renders, interior views, and interactive virtual walkthroughs used to secure funding and pre-sales."
+      }
+    ]
+  }
+]
 }

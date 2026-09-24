@@ -34,8 +34,6 @@ export default function HomePage() {
   const { settings, services, projects, posts } = content;
   const whatsappNumber = settings.whatsappNumber || "";
 
-  console.log(services);
-
   return (
     <main>
       <Header />
