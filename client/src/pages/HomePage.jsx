@@ -10,7 +10,7 @@ import { api } from "../api.js";
 import { scrollToHash } from "../utils.js";
 import HeroSection from "../components/HeroSection.jsx";
 import ExecutionMatrix from "../components/ExecutionMatrix.jsx";
-import LeadershipTeam from "../components/LeadershipTeam.jsx";
+
 import AudienceSection from "../components/AudienceSection.jsx";
 import ServicesSection from "../components/ServicesSection.jsx";
 import ProcessSection from "../components/ProcessSection.jsx";
