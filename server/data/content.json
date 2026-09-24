@@ -70,32 +70,98 @@
     ]
   }
 ],
-  "projects": [
-    {
-      "slug": "foundry55",
-      "name": "Foundry55",
-      "type": "Masterplanned Residential",
-      "tagline": "Industrial living, resolved at development scale.",
-      "metric": "Planning + Architecture",
-      "visual": "grid"
-    },
-    {
-      "slug": "vertex-villa",
-      "name": "The Vertex Villa",
-      "type": "Residential Architecture",
-      "tagline": "A high-efficiency luxury residence shaped by light and environmental integration.",
-      "metric": "4,500 sq ft · 4 bed · 5.5 bath",
-      "visual": "frame"
-    },
-    {
-      "slug": "verde-private-estate",
-      "name": "Verde Private Estate",
-      "type": "Private Residential",
-      "tagline": "A private estate concept balancing strong geometry with landscape.",
-      "metric": "Architecture + Visualization",
-      "visual": "arc"
-    }
-  ],
+ "projects": [
+  {
+    "slug": "foundry55",
+    "name": "Foundry55",
+    "type": "Masterplanned Residential",
+    "tagline": "Industrial living, resolved at development scale.",
+    "metric": "Planning + Architecture",
+    "visual": "grid",
+    "services": [
+      "Land Planning & Masterplanning",
+      "Architectural Design & Documentation"
+    ],
+    "thumbnail": "",
+    "slides": [
+      {
+        "type": "render",
+        "label": "Photorealistic Render",
+        "src": ""
+      },
+      {
+        "type": "model",
+        "label": "3D Model",
+        "src": ""
+      },
+      {
+        "type": "floorplan",
+        "label": "Site Plan",
+        "src": ""
+      }
+    ]
+  },
+  {
+    "slug": "vertex-villa",
+    "name": "The Vertex Villa",
+    "type": "Residential Architecture",
+    "tagline": "A high-efficiency luxury residence shaped by light and environmental integration.",
+    "metric": "4,500 sq ft · 4 bed · 5.5 bath",
+    "visual": "frame",
+    "services": [
+      "Architectural Design & Documentation",
+      "Architectural Visualization & Marketing Assets"
+    ],
+    "thumbnail": "",
+    "slides": [
+      {
+        "type": "render",
+        "label": "Photorealistic Render",
+        "src": ""
+      },
+      {
+        "type": "model",
+        "label": "3D Model",
+        "src": ""
+      },
+      {
+        "type": "floorplan",
+        "label": "Floor Plan",
+        "src": ""
+      }
+    ]
+  },
+  {
+    "slug": "verde-private-estate",
+    "name": "Verde Private Estate",
+    "type": "Private Residential",
+    "tagline": "A private estate concept balancing strong geometry with landscape.",
+    "metric": "Architecture + Visualization",
+    "visual": "arc",
+    "services": [
+      "Architectural Design & Documentation",
+      "Architectural Visualization & Marketing Assets"
+    ],
+    "thumbnail": "",
+    "slides": [
+      {
+        "type": "render",
+        "label": "Photorealistic Render",
+        "src": ""
+      },
+      {
+        "type": "model",
+        "label": "3D Model",
+        "src": ""
+      },
+      {
+        "type": "floorplan",
+        "label": "Floor Plan",
+        "src": ""
+      }
+    ]
+  }
+],
   "posts": [
     {
       "slug": "before-you-hire-an-architect",

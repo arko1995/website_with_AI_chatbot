@@ -14,7 +14,7 @@ import LeadershipTeam from "../components/LeadershipTeam.jsx";
 import AudienceSection from "../components/AudienceSection.jsx";
 import ServicesSection from "../components/ServicesSection.jsx";
 import ProcessSection from "../components/ProcessSection.jsx";
-
+import FeaturedProjects from "../components/FeaturedProjects.jsx";
 export default function HomePage() {
   const [content, setContent] = useState(null);
   const [error, setError] = useState("");
@@ -46,7 +46,7 @@ export default function HomePage() {
 
       <ServicesSection services={services} />
       <ProcessSection process={process} />
-
+      <FeaturedProjects projects={projects} />
       <section className="insights-section shell">
         <div className="section-heading split-heading">
           <div>
