@@ -30,7 +30,7 @@ jobs:
 
       - name: Build client
         env:
-          VITE_BASE_PATH: /preview/
+          VITE_BASE_PATH: /
         run: npm run build --prefix client
 
       - name: Install server dependencies
@@ -42,7 +42,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.13'
+          python-version: "3.13"
 
       - name: Install agent dependencies
         run: pip install -r agent/requirements.txt
@@ -75,7 +75,7 @@ jobs:
           file: Dockerfile.web
           push: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' }}
           build-args: |
-            VITE_BASE_PATH=/preview/
+            VITE_BASE_PATH=/
           tags: |
             ghcr.io/arko1995/skylinedb3-web:latest
             ghcr.io/arko1995/skylinedb3-web:${{ github.sha }}
