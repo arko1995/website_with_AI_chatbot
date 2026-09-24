@@ -1109,9 +1109,7 @@
   letter-spacing: 0.08em;
 }
 
-.process-step:first-child .process-step-number {
-  background: var(--acid);
-}
+
 
 .process-step-content {
   max-width: 190px;
