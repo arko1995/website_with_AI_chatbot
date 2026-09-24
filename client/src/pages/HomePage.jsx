@@ -13,6 +13,7 @@ import ExecutionMatrix from "../components/ExecutionMatrix.jsx";
 import LeadershipTeam from "../components/LeadershipTeam.jsx";
 import AudienceSection from "../components/AudienceSection.jsx";
 import ServicesSection from "../components/ServicesSection.jsx";
+import ProcessSection from "../components/ProcessSection.jsx";
 
 export default function HomePage() {
   const [content, setContent] = useState(null);
@@ -31,7 +32,7 @@ export default function HomePage() {
   if (error) return <Loading label={`Could not load site: ${error}`} />;
   if (!content) return <Loading />;
 
-  const { settings, services, projects, posts } = content;
+  const { settings, services, projects, posts, process } = content;
   const whatsappNumber = settings.whatsappNumber || "";
 
   return (
@@ -44,6 +45,7 @@ export default function HomePage() {
       <ExecutionMatrix />
 
       <ServicesSection services={services} />
+      <ProcessSection process={process} />
 
       <section className="work-section shell" id="work">
         <div className="section-heading split-heading">
