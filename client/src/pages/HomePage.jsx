@@ -11,6 +11,8 @@ import { scrollToHash } from "../utils.js";
 import HeroSection from "../components/HeroSection.jsx";
 import ExecutionMatrix from "../components/ExecutionMatrix.jsx";
 import LeadershipTeam from "../components/LeadershipTeam.jsx";
+import AudienceSection from "../components/AudienceSection.jsx";
+
 export default function HomePage() {
   const [content, setContent] = useState(null);
   const [error, setError] = useState("");
@@ -37,52 +39,7 @@ export default function HomePage() {
 
       <HeroSection settings={settings} />
 
-      <section className="intent-section shell">
-        <div className="section-heading">
-          <div className="eyebrow">
-            <span>02</span>START WITH THE PROJECT
-          </div>
-          <h2>What are you trying to create?</h2>
-          <p>
-            You do not need to know the exact service name. Start with the
-            outcome and we’ll route you toward the right expertise.
-          </p>
-        </div>
-        <div className="intent-grid">
-          {[
-            [
-              "A home",
-              "New construction, additions, renovations and private estates.",
-              "Residential",
-            ],
-            [
-              "A commercial space",
-              "Retail, office, hospitality and mixed-use environments.",
-              "Commercial",
-            ],
-            [
-              "A development",
-              "Land strategy, masterplanning and larger development concepts.",
-              "Development",
-            ],
-            [
-              "An existing project",
-              "Drawings, visualization, cost strategy or technical support.",
-              "Existing project",
-            ],
-          ].map(([title, desc, tag], i) => (
-            <a className="intent-card" href="#contact" key={title}>
-              <span className="card-index">0{i + 1}</span>
-              <div>
-                <small>{tag}</small>
-                <h3>{title}</h3>
-                <p>{desc}</p>
-              </div>
-              <span className="arrow">↗</span>
-            </a>
-          ))}
-        </div>
-      </section>
+      <AudienceSection />
       <ExecutionMatrix />
       <section className="services-section" id="services">
         <div className="shell">

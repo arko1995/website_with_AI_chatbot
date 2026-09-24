@@ -24,8 +24,9 @@ export default function HeroSection({ settings }) {
             </a>
           </div>
         </div>
-
-        <ShowcaseSlider />
+        <div className="hero-visuals">
+          <ShowcaseSlider />
+        </div>
       </div>
 
       <div className="trust-strip">

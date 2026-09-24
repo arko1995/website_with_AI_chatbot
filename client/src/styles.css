@@ -593,3 +593,138 @@
     font-size: 32px;
   }
 }
+
+/* ========================================
+   AUDIENCE / WHO WE SERVE
+======================================== */
+
+.audience-section {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+
+.audience-section .section-heading {
+  margin-bottom: 3rem;
+}
+
+.audience-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  
+  
+}
+
+.audience-card {
+  min-height: 320px;
+  perspective: 1200px;
+}
+
+.audience-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  transform-style: preserve-3d;
+  transition: transform 0.65s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.audience-card:hover .audience-card-inner,
+.audience-card:focus-within .audience-card-inner {
+  transform: rotateY(180deg);
+}
+
+.audience-card-front,
+.audience-card-back {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.75rem;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.audience-card-front {
+  background: #f2f0e9;
+  color: #111;
+}
+
+.audience-card-back {
+  background: var(--lime, #c7ff3d);
+  color: #111;
+}
+
+.audience-number {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  opacity: 0.65;
+}
+
+.audience-card-content h3 {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.35rem, 2vw, 2rem);
+  line-height: 1.05;
+}
+
+.audience-card-content p {
+  margin: 0;
+  max-width: 32rem;
+  line-height: 1.55;
+}
+
+.audience-card-front .audience-card-content p {
+  opacity: 0.7;
+}
+
+.audience-card-back .audience-card-content p {
+  font-size: 0.95rem;
+}
+
+.audience-hint {
+  align-self: flex-end;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.audience-card-front,
+.audience-card-back {
+  border: 1px solid rgba(17, 17, 17, 0.15);
+}
+
+.audience-card-front .audience-card-content p {
+  color: rgba(17, 17, 17, 0.65);
+}
+
+.audience-card-back .audience-card-content p {
+  color: #111;
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+  .audience-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .audience-section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .audience-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .audience-card,
+  .audience-card-inner {
+    min-height: 280px;
+  }
+}
