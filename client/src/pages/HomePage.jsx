@@ -8,7 +8,7 @@ import ChatWidget from "../components/ChatWidget.jsx";
 import Loading from "../components/Loading.jsx";
 import { api } from "../api.js";
 import { scrollToHash } from "../utils.js";
-import ShowcaseSlider from "../components/ShowcaseSlider.jsx";
+import HeroSection from "../components/HeroSection.jsx";
 import ExecutionMatrix from "../components/ExecutionMatrix.jsx";
 import LeadershipTeam from "../components/LeadershipTeam.jsx";
 export default function HomePage() {
@@ -35,36 +35,7 @@ export default function HomePage() {
     <main>
       <Header />
 
-      <section className="hero shell">
-        <div className="hero-grid">
-          <div className="hero-copy">
-            <div className="eyebrow">
-              <span>01</span>
-              {settings.eyebrow}
-            </div>
-            <h1>{settings.heroTitle}</h1>
-            <p className="hero-body">{settings.heroBody}</p>
-            <div className="hero-actions">
-              <a className="button button-lime" href="#contact">
-                Discuss your project <span>↗</span>
-              </a>
-              <a className="text-link" href="#services">
-                Explore capabilities ↓
-              </a>
-            </div>
-          </div>
-          <div className="hero-visual">
-            <ShowcaseSlider />
-          </div>
-        </div>
-        <div className="trust-strip">
-          <span>MASTERPLANNING</span>
-          <span>ARCHITECTURE</span>
-          <span>DOCUMENTATION</span>
-          <span>VISUALIZATION</span>
-          <span>COST STRATEGY</span>
-        </div>
-      </section>
+      <HeroSection settings={settings} />
 
       <section className="intent-section shell">
         <div className="section-heading">
