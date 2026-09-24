@@ -9,39 +9,67 @@
     "whatsappNumber": ""
   },
   "services": [
-    {
-      "slug": "land-planning-masterplanning",
-      "index": "01",
-      "title": "Land Planning & Masterplanning",
-      "short": "Feasibility, site logic, infrastructure flow and development-scale planning.",
-      "body": "Turn raw land and early-stage development ideas into a coherent spatial strategy. SkylineDB3 evaluates site conditions, constraints, zoning context and development potential before shaping the masterplan.",
-      "features": ["Site analysis & feasibility", "Masterplanning", "Residential, commercial & mixed-use layouts", "Development strategy"]
-    },
-    {
-      "slug": "architectural-design-documentation",
-      "index": "02",
-      "title": "Architectural Design & Documentation",
-      "short": "Concept design through detailed, construction-ready drawing sets.",
-      "body": "Move from concept to coordinated architectural documentation with a process that balances spatial quality, technical requirements and buildability.",
-      "features": ["Schematic design", "Design development", "Construction documents", "Construction support"]
-    },
-    {
-      "slug": "cost-value-engineering",
-      "index": "03",
-      "title": "Cost & Value Engineering",
-      "short": "Early cost intelligence to keep design ambition aligned with the budget.",
-      "body": "Cost decisions are strongest when they happen before construction. SkylineDB3 helps teams forecast costs, compare options and protect the design intent while reducing avoidable overruns.",
-      "features": ["Pre-construction estimation", "Material strategy", "Value engineering", "Budget alignment"]
-    },
-    {
-      "slug": "visualization-marketing",
-      "index": "04",
-      "title": "3D Visualization & Marketing",
-      "short": "High-fidelity visual assets that make a future space tangible before it exists.",
-      "body": "From photoreal renders to immersive walkthroughs, visualization helps owners, developers and investors understand the project — and communicate it clearly to others.",
-      "features": ["Exterior rendering", "Interior rendering", "Interactive walkthroughs", "Investor & pre-sales assets"]
-    }
-  ],
+  {
+    "slug": "land-planning-masterplanning",
+    "index": "01",
+    "title": "Land Planning & Masterplanning",
+    "short": "",
+    "body": "We lay the strategic groundwork for long-term success. Before a single building is designed, we optimize your land to maximize usability, compliance, and property value.",
+    "features": [
+      "Site Feasibility & Environmental Analysis",
+      "Zoning & Code Compliance Reviews",
+      "Macro-Level Spatial Layouts (Residential, Commercial, Mixed-Use)"
+    ]
+  },
+  {
+    "slug": "architectural-design-documentation",
+    "index": "02",
+    "title": "Architectural Design & Documentation",
+    "short": "",
+    "body": "Translating ambitious concepts into flawless technical reality. We provide the exact specifications required by contractors and municipalities to build safely and efficiently.",
+    "features": [
+      "Schematic Design & Concept Development",
+      "Design Development & Material Selection",
+      "Permit-Ready Construction Documents (CDs)"
+    ]
+  },
+  {
+    "slug": "cost-estimation-budget-strategy",
+    "index": "03",
+    "title": "Cost Estimation & Budget Strategy",
+    "short": "",
+    "body": "Stop guessing on construction costs. We integrate predictive financial forecasting directly into the design phase to ensure your project stays profitable and buildable.",
+    "features": [
+      "Pre-Construction Cost Forecasting",
+      "Value Engineering (Optimizing aesthetics while lowering costs)",
+      "Material & Labor Budget Alignment"
+    ]
+  },
+  {
+    "slug": "architectural-visualization-marketing-assets",
+    "index": "04",
+    "title": "Architectural Visualization & Marketing Assets",
+    "short": "",
+    "body": "See the future before you fund it. We create premium, photorealistic digital assets designed to secure investors, win municipal approvals, and drive pre-sales.",
+    "features": [
+      "High-Fidelity 3D Exterior & Interior Renders",
+      "Interactive 3D Walkthroughs & Showrooms",
+      "Market-Ready Visuals for Investor Pitches"
+    ]
+  },
+  {
+    "slug": "as-built-documentation-permitting",
+    "index": "05",
+    "title": "As-Built Documentation & Permitting",
+    "short": "",
+    "body": "We capture existing conditions with absolute precision and navigate local municipal regulations so your project can proceed without legal or compliance delays.",
+    "features": [
+      "Accurate As-Built Floor Plans, Elevations, & 3D Models",
+      "Code Compliance & Zoning Reviews",
+      "Complete, Expedited Permit Drawing Sets"
+    ]
+  }
+],
   "projects": [
     {
       "slug": "foundry55",

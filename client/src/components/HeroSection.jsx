@@ -24,7 +24,7 @@ export default function HeroSection({ settings }) {
             </a>
           </div>
         </div>
-        <div className="hero-visuals">
+        <div className="hero-visual">
           <ShowcaseSlider />
         </div>
       </div>

@@ -12,6 +12,7 @@ import HeroSection from "../components/HeroSection.jsx";
 import ExecutionMatrix from "../components/ExecutionMatrix.jsx";
 import LeadershipTeam from "../components/LeadershipTeam.jsx";
 import AudienceSection from "../components/AudienceSection.jsx";
+import ServicesSection from "../components/ServicesSection.jsx";
 
 export default function HomePage() {
   const [content, setContent] = useState(null);
@@ -33,6 +34,8 @@ export default function HomePage() {
   const { settings, services, projects, posts } = content;
   const whatsappNumber = settings.whatsappNumber || "";
 
+  console.log(services);
+
   return (
     <main>
       <Header />
@@ -41,39 +44,8 @@ export default function HomePage() {
 
       <AudienceSection />
       <ExecutionMatrix />
-      <section className="services-section" id="services">
-        <div className="shell">
-          <div className="section-heading split-heading">
-            <div>
-              <div className="eyebrow">
-                <span>03</span>CAPABILITIES
-              </div>
-              <h2>From site logic to construction-ready decisions.</h2>
-            </div>
-            <p>
-              Technical depth without making the client journey complicated.
-              Every service has one clear next step: talk to the team about your
-              project.
-            </p>
-          </div>
-          <div className="service-list">
-            {services.map((service) => (
-              <Link
-                className="service-row"
-                to={`/services/${service.slug}`}
-                key={service.slug}
-              >
-                <span className="service-index">/{service.index}</span>
-                <div>
-                  <h3>{service.title}</h3>
-                  <p>{service.short}</p>
-                </div>
-                <span className="circle-arrow">↗</span>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
+
+      <ServicesSection services={services} />
 
       <section className="work-section shell" id="work">
         <div className="section-heading split-heading">
