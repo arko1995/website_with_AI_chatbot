@@ -8,22 +8,14 @@ Run from this directory:
 
 import os
 from typing import Any
-from dotenv import load_dotenv
+
 
 from fastapi import FastAPI
-from google import genai
-from google.genai import types
-from pydantic import BaseModel, Field
 
-load_dotenv()
+from pydantic import BaseModel, Field
+from llm import generate_reply
 
 app = FastAPI(title="SkylineDB3 Project Assistant", version="1.0.0")
-
-GEMINI_MODEL = "gemini-3.8-flash"
-
-GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
-
-client = genai.Client(api_key=GEMINI_API_KEY)
 
 
 class ChatMessage(BaseModel):
@@ -38,34 +30,7 @@ class ChatRequest(BaseModel):
 
 def compose_reply(payload: ChatRequest) -> str:
 
-    contents = []
-
-    for messages in payload.messages:
-        role = messages.role
-        content = messages.content
-
-        if role == "user":
-            gemini_role = "user"
-        elif role == "assistant":
-            gemini_role = "model"
-        else:
-            continue
-
-        contents.append(
-            types.Content(role=gemini_role, parts=[types.Part(text=content)])
-        )
-
-    response = client.models.generate_content(
-        model=GEMINI_MODEL,
-        contents=contents,
-        config=types.GenerateContentConfig(
-            system_instruction=(
-                "You are SkylineDB3's project assistant. "
-                "Be concise, helpful, and professional."
-            )
-        ),
-    )
-    return response.text or "I couldn't generate a response"
+    return generate_reply(payload.messages)
 
 
 @app.get("/health")
