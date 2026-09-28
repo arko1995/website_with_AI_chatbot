@@ -2,22 +2,22 @@ import { useEffect, useState } from "react";
 
 const slides = [
   {
-    video: "client/public/animation/1326 E (Living Room).mp4",
+    video: "animation/1326 E (Living Room).mp4",
     category: "Residential",
     title: "Contemporary Living",
   },
   {
-    video: "client/public/animation/The Foundry 55 (Workforce Housing).mp4",
+    video: "animation/The Foundry 55 (Workforce Housing).mp4",
     category: "Commercial",
     title: "Places for Business",
   },
   {
-    video: "client/public/animation/The Madison junction (Exterior).mp4",
+    video: "animation/The Madison junction (Exterior).mp4",
     category: "Civic",
     title: "Spaces for Community",
   },
   {
-    video: "client/public/animation/The Slice (Courtyard).mp4",
+    video: "animation/The Slice (Courtyard).mp4",
     category: "Civic",
     title: "Spaces for Community",
   },
@@ -56,7 +56,10 @@ const ShowcaseSlider = () => {
           <div className="showcase-slide" key={slide.video}>
             <video
               src={`${basePath}${slide.video}`}
-              alt={`${slide.category} architecture - ${slide.title}`}
+              autoPlay
+              muted
+              loop
+              playsInline
             />
 
             <div className="showcase-overlay">
