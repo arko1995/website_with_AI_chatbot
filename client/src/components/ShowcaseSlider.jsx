@@ -1,51 +1,48 @@
-import { useEffect, useState } from "react"
-
+import { useEffect, useState } from "react";
 
 const slides = [
   {
-    image: 'images/showcase/pexels-d_odd_y-885774-3882638.webp',
-    category: 'Residential',
-    title: 'Contemporary Living',
+    video: "client/public/animation/1326 E (Living Room).mp4",
+    category: "Residential",
+    title: "Contemporary Living",
   },
   {
-    image: 'images/showcase/pexels-lexi-lauwers-1431940-17939427.webp',
-    category: 'Commercial',
-    title: 'Places for Business',
+    video: "client/public/animation/The Foundry 55 (Workforce Housing).mp4",
+    category: "Commercial",
+    title: "Places for Business",
   },
   {
-    image: 'images/showcase/stock2-885774-3882638.webp',
-    category: 'Civic',
-    title: 'Spaces for Community',
+    video: "client/public/animation/The Madison junction (Exterior).mp4",
+    category: "Civic",
+    title: "Spaces for Community",
+  },
+  {
+    video: "client/public/animation/The Slice (Courtyard).mp4",
+    category: "Civic",
+    title: "Spaces for Community",
   },
 ];
 
-
-
 const ShowcaseSlider = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
 
-    const [currentSlide, setCurrentSlide] = useState(0)
+  const basePath = import.meta.env.BASE_URL;
 
-    const basePath = import.meta.env.BASE_URL
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((current) => (current + 1) % slides.length);
+    }, 5000);
 
-    useEffect(()=>{
-        const interval = setInterval(()=>{
-            setCurrentSlide((current)=>(current+1) % slides.length)
-        },5000)
+    return () => clearInterval(interval);
+  }, []);
 
-        return ()=> clearInterval(interval);
-    },[])
+  const goToPrevious = () => {
+    setCurrentSlide((current) => (current - 1 + slides.length) % slides.length);
+  };
 
-
-    const goToPrevious = ()=>{
-        setCurrentSlide((current) => (current-1+slides.length) % slides.length)
-    }
-
-    const goToNext = ()=>{
-        setCurrentSlide((current)=> (current + 1) % slides.length)
-    }
-
-
-
+  const goToNext = () => {
+    setCurrentSlide((current) => (current + 1) % slides.length);
+  };
 
   return (
     <div className="showcase-slider">
@@ -56,9 +53,9 @@ const ShowcaseSlider = () => {
         }}
       >
         {slides.map((slide) => (
-          <div className="showcase-slide" key={slide.image}>
-            <img
-              src={`${basePath}${slide.image}`}
+          <div className="showcase-slide" key={slide.animation}>
+            <video
+              src={`${basePath}${slide.animation}`}
               alt={`${slide.category} architecture - ${slide.title}`}
             />
 
@@ -80,9 +77,9 @@ const ShowcaseSlider = () => {
         </button>
 
         <span>
-          {String(currentSlide + 1).padStart(2, '0')}
-          {' / '}
-          {String(slides.length).padStart(2, '0')}
+          {String(currentSlide + 1).padStart(2, "0")}
+          {" / "}
+          {String(slides.length).padStart(2, "0")}
         </span>
 
         <button
@@ -98,15 +95,15 @@ const ShowcaseSlider = () => {
         {slides.map((slide, index) => (
           <button
             type="button"
-            key={slide.image}
-            className={index === currentSlide ? 'active' : ''}
+            key={slide.animation}
+            className={index === currentSlide ? "active" : ""}
             onClick={() => setCurrentSlide(index)}
             aria-label={`Show image ${index + 1}`}
           />
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ShowcaseSlider
+export default ShowcaseSlider;
