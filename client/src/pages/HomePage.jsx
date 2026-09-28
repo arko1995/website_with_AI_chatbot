@@ -81,9 +81,6 @@ export default function HomePage() {
       <section className="contact-section" id="contact">
         <div className="shell contact-grid">
           <div className="contact-copy">
-            <div className="eyebrow light">
-              <span>07</span>START A CONVERSATION
-            </div>
             <h2>Have a project in mind?</h2>
             <p>
               Give us the essentials. We’ll package the context into WhatsApp so

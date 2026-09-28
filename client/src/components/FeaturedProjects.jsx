@@ -36,8 +36,8 @@ export default function FeaturedProjects({ projects }) {
       <div className="shell">
         <div className="section-heading featured-projects-heading">
           <div className="eyebrow">
-            <span>06</span>
-            FEATURED PROJECTS
+            {/* <span>06</span>
+            FEATURED PROJECTS */}
           </div>
 
           <h2>Featured Projects</h2>

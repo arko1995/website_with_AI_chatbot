@@ -2317,3 +2317,161 @@
     min-width: 0;
   }
 }
+
+/* =========================
+   Commercial Pricing CTA
+   ========================= */
+
+.commercial-pricing {
+  position: relative;
+  overflow: hidden;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 70px;
+  align-items: end;
+
+  margin-top: 28px;
+  padding: 52px;
+
+  background: var(--ink);
+  color: var(--paper);
+}
+
+
+/* subtle architectural detail */
+
+.commercial-pricing::before {
+  content: "";
+  position: absolute;
+
+  top: 0;
+  right: 32%;
+  bottom: 0;
+
+  width: 1px;
+  background: rgba(255, 255, 255, 0.12);
+
+  transform: skewX(-18deg);
+  transform-origin: bottom;
+}
+
+
+.commercial-pricing-copy {
+  position: relative;
+  z-index: 1;
+
+  max-width: 700px;
+}
+
+.commercial-pricing-label {
+  display: block;
+  margin-bottom: 18px;
+
+  color: rgba(255, 255, 255, 0.55);
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.commercial-pricing h3 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(38px, 4vw, 58px);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.025em;
+}
+
+.commercial-pricing p {
+  max-width: 610px;
+  margin: 20px 0 0;
+
+  color: rgba(255, 255, 255, 0.66);
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+
+/* CTA */
+
+.commercial-pricing-cta {
+  position: relative;
+  z-index: 1;
+
+  min-width: 250px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+
+  padding: 18px 20px;
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+
+  color: var(--paper);
+  text-decoration: none;
+
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.commercial-pricing-cta:hover {
+  background: var(--paper);
+  border-color: var(--paper);
+  color: var(--ink);
+}
+
+.commercial-pricing-cta > span:last-child {
+  font-size: 18px;
+  font-weight: 400;
+
+  transition: transform 0.2s ease;
+}
+
+.commercial-pricing-cta:hover > span:last-child {
+  transform: translate(3px, -3px);
+}
+
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .commercial-pricing {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .commercial-pricing-cta {
+    width: fit-content;
+  }
+}
+
+@media (max-width: 680px) {
+  .commercial-pricing {
+    padding: 34px 24px;
+  }
+
+  .commercial-pricing::before {
+    display: none;
+  }
+
+  .commercial-pricing h3 {
+    font-size: 38px;
+  }
+
+  .commercial-pricing-cta {
+    width: 100%;
+    min-width: 0;
+  }
+}

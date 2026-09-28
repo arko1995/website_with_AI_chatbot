@@ -12,8 +12,8 @@ export default function ProcessSection({ process }) {
       <div className="shell">
         <div className="section-heading process-heading">
           <div className="eyebrow">
-            <span>05</span>
-            OUR PROCESS
+            {/* <span>05</span>
+            OUR PROCESS */}
           </div>
 
           <h2>The SkylineDB3 Integrated Process</h2>

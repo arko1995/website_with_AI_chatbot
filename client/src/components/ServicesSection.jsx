@@ -12,8 +12,8 @@ export default function ServicesSection({ services }) {
       <div className="shell">
         <div className="section-heading services-heading">
           <div className="eyebrow light">
-            <span>04</span>
-            CORE SERVICES
+            {/* <span>04</span>
+            CORE SERVICES */}
           </div>
 
           <h2>From early strategy to construction-ready decisions.</h2>

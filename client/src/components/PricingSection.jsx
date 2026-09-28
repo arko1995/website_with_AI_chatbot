@@ -276,6 +276,26 @@ export default function PricingSection() {
             </div>
           )}
         </div>
+
+        <div className="commercial-pricing">
+          <div className="commercial-pricing-copy">
+            <span className="commercial-pricing-label">
+              COMMERCIAL & LARGE-SCALE PROJECTS
+            </span>
+
+            <h3>Planning something bigger?</h3>
+
+            <p>
+              Commercial, multi-family, and large-scale residential projects are
+              custom-quoted based on scope, complexity, and deliverables.
+            </p>
+          </div>
+
+          <a className="commercial-pricing-cta" href="#contact">
+            <span>Schedule a Strategy Call</span>
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
       </div>
     </section>
   );
