@@ -52,9 +52,7 @@ export default function HomePage() {
       <section className="insights-section shell">
         <div className="section-heading split-heading">
           <div>
-            <div className="eyebrow">
-              <span>06</span>INSIGHTS
-            </div>
+            <div className="eyebrow">{/* <span>06</span>INSIGHTS */}</div>
             <h2>Useful answers before the first call.</h2>
           </div>
           <Link className="text-link" to="/insights">

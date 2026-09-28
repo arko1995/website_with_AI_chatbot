@@ -48,8 +48,8 @@ export default function AudienceSection() {
     <section className="audience-section shell" id="audience">
       <div className="section-heading">
         <div className="eyebrow">
-          <span>02</span>
-          WHO WE SERVE
+          {/* <span>02</span>
+          WHO WE SERVE */}
         </div>
 
         <h2>Built around the people making the decisions.</h2>

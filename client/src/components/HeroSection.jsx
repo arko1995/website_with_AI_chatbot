@@ -6,8 +6,8 @@ export default function HeroSection({ settings }) {
       <div className="hero-grid">
         <div className="hero-copy">
           <div className="eyebrow">
-            <span>01</span>
-            {settings.eyebrow}
+            {/* <span>01</span>
+            {settings.eyebrow} */}
           </div>
 
           <h1>{settings.heroTitle}</h1>

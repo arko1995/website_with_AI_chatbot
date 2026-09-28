@@ -109,8 +109,8 @@ export default function PricingSection() {
       <div className="shell">
         <div className="section-heading pricing-heading">
           <div className="eyebrow">
-            <span>06</span>
-            PRICING & PACKAGES
+            {/* <span>06</span>
+            PRICING & PACKAGES */}
           </div>
 
           <h2>Pricing & Packages</h2>
