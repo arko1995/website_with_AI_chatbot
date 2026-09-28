@@ -50,10 +50,59 @@ const packageGroups = [
   },
 ];
 
+const customServices = [
+  {
+    name: "Site Survey & As-Built Documentation",
+    price: 900,
+  },
+  {
+    name: "Complete 2D Floor Plans",
+    price: 1200,
+  },
+  {
+    name: "Basic 3D Model",
+    price: 600,
+  },
+  {
+    name: "Construction Documents (Permit Set)",
+    price: 1800,
+  },
+  {
+    name: "Photorealistic 3D Renders (Set of 3)",
+    price: 750,
+  },
+  {
+    name: "Immersive 3D Walkthrough Video",
+    price: 1200,
+  },
+];
+
 export default function PricingSection() {
   const [activeTab, setActiveTab] = useState(0);
 
+  const [builderOpen, setBuilderOpen] = useState(false);
+  const [squareFeet, setSquareFeet] = useState("");
+  const [selectedService, setSelectedService] = useState([]);
+
   const activeGroup = packageGroups[activeTab];
+
+  const toggleService = (serviceName) => {
+    setSelectedService((current) =>
+      current.includes(serviceName)
+        ? current.filter((name) => name !== serviceName)
+        : [...current, serviceName],
+    );
+  };
+
+  const serviceTotal = customServices
+    .filter((service) => selectedService.includes(service.name))
+    .reduce((total, service) => total + service.price, 0);
+
+  const projectSize = Number(squareFeet) || 0;
+
+  const extraSquareFeet = Math.max(projectSize - 2500, 0);
+  const squareFootSurcharge = extraSquareFeet * 1;
+  const estimatedTotal = serviceTotal + squareFootSurcharge;
 
   return (
     <section className="pricing-section" id="pricing">
@@ -138,6 +187,94 @@ export default function PricingSection() {
               </button>
             </article>
           ))}
+        </div>
+
+        <div className={`custom-builder ${builderOpen ? "is-open" : ""}`}>
+          <button
+            type="button"
+            className="custom-builder-trigger"
+            onClick={() => setBuilderOpen((current) => !current)}
+          >
+            <span>
+              {builderOpen ? "-" : "+"} Prefer to pick individual services?
+              Build your custom scope here.
+            </span>
+
+            <span className="custom-builder-arrow">
+              {builderOpen ? "↑" : "↓"}
+            </span>
+          </button>
+
+          {builderOpen && (
+            <div className="custom-builder-content">
+              <div className="custom-builder-heading">
+                <div>
+                  <span className="custom-builder-label">
+                    CUSTOM SERVICE BUILDER
+                  </span>
+                  <h3>Build your project scope</h3>
+                </div>
+
+                <label className="square-feet-field">
+                  <span>PROJECT SIZE</span>
+                  <div>
+                    <input
+                      type="number"
+                      min="0"
+                      value={squareFeet}
+                      onChange={(event) => setSquareFeet(event.target.value)}
+                    />
+                    <span>SQ. FT.</span>
+                  </div>
+                </label>
+              </div>
+
+              <div className="custom-service-list">
+                {customServices.map((service) => {
+                  const isSelected = selectedService.includes(service.name);
+
+                  return (
+                    <label
+                      className={`custom-service ${isSelected ? "is-selected" : ""}`}
+                      key={service.name}
+                    >
+                      <input
+                        type="checkbox"
+                        checked={isSelected}
+                        onChange={() => toggleService(service.name)}
+                      />
+
+                      <span className="custom-service-check">
+                        {isSelected ? "✓" : ""}
+                      </span>
+                      <span className="custom-service-name">
+                        {service.name}
+                      </span>
+                      <strong>${service.price.toLocaleString()}</strong>
+                    </label>
+                  );
+                })}
+              </div>
+
+              <div className="custom-builder-footer">
+                <div className="custom-builder-total">
+                  <span>TOTAL ESTIMATED COST</span>
+                  <strong>${estimatedTotal.toLocaleString()}</strong>
+
+                  {squareFootSurcharge > 0 && (
+                    <small>
+                      Includes ${squareFootSurcharge.toLocaleString()} for{" "}
+                      {extraSquareFeet.toLocaleString()} sq. ft. above 2,500.
+                    </small>
+                  )}
+                </div>
+
+                <button type="button" className="button button-dark">
+                  Request Custom Proposal
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </section>
