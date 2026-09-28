@@ -10,7 +10,7 @@ import { api } from "../api.js";
 import { scrollToHash } from "../utils.js";
 import HeroSection from "../components/HeroSection.jsx";
 import ExecutionMatrix from "../components/ExecutionMatrix.jsx";
-
+import PricingSection from "../components/PricingSection.jsx";
 import AudienceSection from "../components/AudienceSection.jsx";
 import ServicesSection from "../components/ServicesSection.jsx";
 import ProcessSection from "../components/ProcessSection.jsx";
@@ -45,7 +45,10 @@ export default function HomePage() {
 
       <ServicesSection services={services} />
       <ProcessSection process={process} />
+
       <FeaturedProjects projects={projects} />
+
+      <PricingSection />
       <section className="insights-section shell">
         <div className="section-heading split-heading">
           <div>
