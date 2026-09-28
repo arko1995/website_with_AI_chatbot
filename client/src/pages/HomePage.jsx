@@ -42,7 +42,6 @@ export default function HomePage() {
       <HeroSection settings={settings} />
 
       <AudienceSection />
-      <ExecutionMatrix />
 
       <ServicesSection services={services} />
       <ProcessSection process={process} />

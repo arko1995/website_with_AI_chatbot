@@ -4,22 +4,22 @@ const slides = [
   {
     video: "animation/1326 E (Living Room).mp4",
     category: "Residential",
-    title: "Contemporary Living",
+    title: "Living Room",
   },
   {
     video: "animation/The Foundry 55 (Workforce Housing).mp4",
     category: "Commercial",
-    title: "Places for Business",
+    title: "Workforce Housing",
   },
   {
     video: "animation/The Madison junction (Exterior).mp4",
-    category: "Civic",
-    title: "Spaces for Community",
+    category: "Commercial",
+    title: "Exterior",
   },
   {
     video: "animation/The Slice (Courtyard).mp4",
-    category: "Civic",
-    title: "Spaces for Community",
+    category: "Residential",
+    title: "Courtyard",
   },
 ];
 

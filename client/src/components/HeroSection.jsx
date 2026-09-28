@@ -15,7 +15,7 @@ export default function HeroSection({ settings }) {
           <p className="hero-body">{settings.heroBody}</p>
 
           <div className="hero-actions">
-            <a className="button button-lime" href="#work">
+            <a className="button button-lime" href="#projects">
               View Our Projects <span>↗</span>
             </a>
 
