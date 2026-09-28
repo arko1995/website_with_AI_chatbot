@@ -53,9 +53,9 @@ const ShowcaseSlider = () => {
         }}
       >
         {slides.map((slide) => (
-          <div className="showcase-slide" key={slide.animation}>
+          <div className="showcase-slide" key={slide.video}>
             <video
-              src={`${basePath}${slide.animation}`}
+              src={`${basePath}${slide.video}`}
               alt={`${slide.category} architecture - ${slide.title}`}
             />
 
@@ -95,7 +95,7 @@ const ShowcaseSlider = () => {
         {slides.map((slide, index) => (
           <button
             type="button"
-            key={slide.animation}
+            key={slide.video}
             className={index === currentSlide ? "active" : ""}
             onClick={() => setCurrentSlide(index)}
             aria-label={`Show image ${index + 1}`}

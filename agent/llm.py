@@ -19,7 +19,7 @@ class Message(Protocol):
     content: str
 
 
-def generate_reply(messages: Sequence[message]) -> str:
+def generate_reply(messages: Sequence[Message]) -> str:
     contents = []
 
     for message in messages:
