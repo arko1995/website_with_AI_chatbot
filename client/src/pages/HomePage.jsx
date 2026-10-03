@@ -46,7 +46,7 @@ export default function HomePage() {
       <ServicesSection services={services} />
       <ProcessSection process={process} />
 
-      <FeaturedProjects projects={projects} />
+      {/* <FeaturedProjects projects={projects} /> */}
 
       <PricingSection />
       <section className="insights-section shell">
