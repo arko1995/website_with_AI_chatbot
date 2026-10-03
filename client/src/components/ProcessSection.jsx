@@ -45,12 +45,15 @@ export default function ProcessSection({ process }) {
         >
           {activeProcess.steps.map((step, index) => (
             <article className="process-step" key={step.title}>
-              <div className="process-step-number">
-                {String(index + 1).padStart(2, "0")}
+              <div className="process-step-head">
+                <div className="process-step-number">
+                  {String(index + 1).padStart(2, "0")}
+                </div>
+
+                <h3>{step.title}</h3>
               </div>
 
               <div className="process-step-content">
-                <h3>{step.title}</h3>
                 <p>{step.description}</p>
               </div>
             </article>

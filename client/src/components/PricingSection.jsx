@@ -7,7 +7,16 @@ const packageGroups = [
       {
         name: "The Spatial Starter",
         target: "The essential foundation for spatial planning and structure.",
-        includes: "Complete 2D Floor Plans + Basic 3D Model.",
+        includes: [
+          {
+            name: "Complete 2D Floor Plans",
+            price: 1200,
+          },
+          {
+            name: "Basic 3D Model",
+            price: 600,
+          },
+        ],
         separatePrice: 1800,
         packagePrice: 1450,
         savings: 350,
@@ -15,8 +24,20 @@ const packageGroups = [
       {
         name: "The Builder’s Standard",
         target: "The sweet spot for permits, bank financing, and pre-sales.",
-        includes:
-          "Complete 2D Floor Plans + Basic 3D Model + Photorealistic 3D Renders.",
+        includes: [
+          {
+            name: "Complete 2D Floor Plans",
+            price: 1200,
+          },
+          {
+            name: "Basic 3D Model",
+            price: 600,
+          },
+          {
+            name: "Photorealistic 3D Renders",
+            price: 750,
+          },
+        ],
         separatePrice: 2550,
         packagePrice: 1950,
         savings: 600,
@@ -25,8 +46,24 @@ const packageGroups = [
       {
         name: "The Immersive Suite",
         target: "The ultimate luxury design and marketing experience.",
-        includes:
-          "2D Floor Plans + Basic 3D Model + 3D Renders + Interactive Walkthrough Video.",
+        includes: [
+          {
+            name: "Complete 2D Floor Plans",
+            price: 1200,
+          },
+          {
+            name: "Basic 3D Model",
+            price: 600,
+          },
+          {
+            name: "Photorealistic 3D Renders",
+            price: 750,
+          },
+          {
+            name: "Interactive Walkthrough Video",
+            price: 1200,
+          },
+        ],
         separatePrice: 3750,
         packagePrice: 2950,
         savings: 800,
@@ -40,8 +77,16 @@ const packageGroups = [
         name: "The Renovation & Permit Package",
         target:
           "The fastest way to get measured, legally approved, and ready for demolition.",
-        includes:
-          "High-Precision Site Survey & As-Builts + Construction Documents (Permit Set).",
+        includes: [
+          {
+            name: "Site Survey & As-Built Documentation",
+            price: 900,
+          },
+          {
+            name: "Construction Documents (Permit Set)",
+            price: 1800,
+          },
+        ],
         separatePrice: 2700,
         packagePrice: 2350,
         savings: 350,
@@ -165,8 +210,17 @@ export default function PricingSection() {
               <p className="pricing-target">{item.target}</p>
 
               <div className="pricing-includes">
-                <span>INCLUDES</span>
-                <p>{item.includes}</p>
+                <span className="pricing-includes-label">INCLUDES</span>
+
+                <div className="pricing-includes-list">
+                  {item.includes.map((service) => (
+                    <div className="pricing-includes-item" key={service.name}>
+                      <span>{service.name}</span>
+
+                      <strong>${service.price.toLocaleString()}</strong>
+                    </div>
+                  ))}
+                </div>
               </div>
 
               <div className="pricing-price">
@@ -181,10 +235,10 @@ export default function PricingSection() {
                 </span>
               </div>
 
-              <button type="button" className="button button-dark">
+              {/* <button type="button" className="button button-dark">
                 Select Package
                 <span>→</span>
-              </button>
+              </button> */}
             </article>
           ))}
         </div>

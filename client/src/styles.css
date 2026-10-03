@@ -1063,70 +1063,79 @@
   transform: scaleX(1);
 }
 
+
 /* Steps */
 
 .process-steps {
-  position: relative;
-
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  column-gap: 34px;
 
-  margin-top: 72px;
+  margin-top: 64px;
 }
 
-/* horizontal timeline */
 
-
-
-
+/* Individual process card */
 
 .process-step {
   position: relative;
+
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  border: 1px solid var(--line);
+  background: var(--paper);
 }
 
 
+/* Card header */
 
-/*
-  Five-step workflows use five columns.
-  Six-step workflow naturally fills all six.
-*/
+.process-step-head {
+  min-height: 78px;
 
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr);
 
+  border-bottom: 1px solid var(--line);
+}
 
 .process-step-number {
-  width: 35px;
-  height: 35px;
-
   display: grid;
   place-items: center;
 
-  margin-bottom: 30px;
+  border-right: 1px solid var(--line);
 
-  border: 1px solid var(--ink);
-  border-radius: 50%;
-
-  background: var(--paper);
+  color: var(--ink);
 
   font-size: 9px;
   font-weight: 800;
   letter-spacing: 0.08em;
 }
 
+.process-step-head h3 {
+  display: flex;
+  align-items: center;
 
-
-.process-step-content {
-  position: relative;
-  max-width: 190px;
-}
-
-.process-step-content h3 {
-  min-height: 48px;
-  margin: 0 0 14px;
+  margin: 0;
+  padding: 14px 16px;
 
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 400;
   line-height: 1.15;
+}
+
+
+/* Card body */
+
+.process-step-content {
+  flex: 1;
+
+  max-width: none;
+  min-height: 190px;
+
+  padding: 24px 20px 28px;
 }
 
 .process-step-content p {
@@ -1134,107 +1143,114 @@
 
   color: var(--muted);
   font-size: 13px;
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
-.process-step:not(:last-child) .process-step-content::after {
+.process-step:not(:last-child)::after {
   content: "→";
+
   position: absolute;
+  z-index: 2;
 
   top: 50%;
-  left: calc(100% + 18px);
+  right: -17px;
 
-  transform: translateY(-50%);
+  transform: translate(50%, -50%);
 
-  font-size: 20px;
-  font-weight: 400;
   color: var(--ink);
+  background: var(--paper);
+
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1;
 
   pointer-events: none;
 }
 
+/* Tablet */
+@media (max-width: 1000px) {
+  .process-steps {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 14px;
+  }
 
-@media (max-width:680px){
+  .process-step:not(:last-child)::after {
+    display: none;
+  }
+
+  .process-step-content {
+    min-height: 150px;
+  }
+}
+
+
+/* Mobile */
+
+@media (max-width: 680px) {
   .process-section {
-  padding: 80px 0;
-}
+    padding: 80px 0;
+  }
 
-.process-heading h2 {
-  font-size: 42px;
-}
-
-.process-tabs {
-  grid-template-columns: 1fr;
-  margin-top: 42px;
-  border-top: 1px solid var(--line);
-}
-
-.process-tab {
-  padding: 17px 0;
-  border-bottom: 1px solid var(--line);
-}
-
-.process-tab {
-  padding: 17px 0;
-  border-bottom: 1px solid var(--line);
-}
-
-/* ADD HERE */
+  .process-heading h2 {
+    font-size: 42px;
+  }
 
 
-.process-tab + .process-tab {
-  border-left: 0;
-}
-.process-tab + .process-tab {
-  border-left: 0;
-}
+  /* Tabs */
 
-.process-tab > span {
-  display: inline-block;
-  width: 34px;
-  margin: 0;
-}
+  .process-tabs {
+    grid-template-columns: 1fr;
+    margin-top: 42px;
+    border-top: 1px solid var(--line);
+  }
 
-.process-tab::after {
-  display: none;
-}
+  .process-tab {
+    padding: 17px 0;
+    border-bottom: 1px solid var(--line);
+  }
 
-.process-tab.is-active {
-  padding-left: 12px;
-  background: var(--acid);
-}
+  .process-tab + .process-tab {
+    border-left: 0;
+  }
 
-.process-steps {
-  display: block;
-  margin-top: 48px;
-}
-.process-step:not(:last-child) .process-step-content::after{
-  display: none;
-}
+  .process-tab > span {
+    display: inline-block;
+    width: 34px;
+    margin: 0;
+  }
+
+  .process-tab::after {
+    display: none;
+  }
+
+  .process-tab.is-active {
+    padding-left: 12px;
+    background: var(--acid);
+  }
 
 
+  /* Cards */
 
-.process-step {
-  display: grid;
-  grid-template-columns: 35px 1fr;
-  gap: 22px;
+  .process-steps {
+    grid-template-columns: 1fr !important;
+    gap: 14px;
 
-  padding: 0 0 38px;
-}
+    margin-top: 42px;
+  }
 
-.process-step-number {
-  margin: 0;
-}
+  .process-step-head {
+    min-height: 70px;
+    grid-template-columns: 56px minmax(0, 1fr);
+  }
 
-.process-step-content {
-  max-width: 100%;
-}
+  .process-step-head h3 {
+    font-size: 19px;
+  }
 
-.process-step-content h3 {
-  min-height: 0;
-  margin-bottom: 8px;
-  font-size: 20px;
-}
+  .process-step-content {
+    min-height: 0;
+    padding: 22px 18px 26px;
+  }
 }
 
 /* Featured Projects */
@@ -1869,9 +1885,9 @@
   border-top: 1px solid var(--line);
 }
 
-.pricing-includes > span {
+.pricing-includes-label {
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 14px;
 
   color: var(--muted);
   font-size: 9px;
@@ -1879,12 +1895,40 @@
   letter-spacing: 0.12em;
 }
 
-.pricing-includes p {
-  margin: 0;
+.pricing-includes-list {
+  display: flex;
+  flex-direction: column;
+}
 
+.pricing-includes-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 16px;
+  align-items: baseline;
+
+  padding: 9px 0;
+
+  border-bottom: 1px solid var(--line);
+}
+
+.pricing-includes-item:last-child {
+  border-bottom: 0;
+}
+
+.pricing-includes-item > span {
   color: var(--ink);
-  font-size: 14px;
-  line-height: 1.6;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.pricing-includes-item > strong {
+  color: var(--ink);
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 15px;
+  font-weight: 400;
+
+  white-space: nowrap;
 }
 
 
@@ -2474,4 +2518,13 @@
     width: 100%;
     min-width: 0;
   }
+}
+.footer-logo {
+  display: inline-block;
+}
+
+.footer-logo img {
+  display: block;
+  width: 180px;
+  height: auto;
 }

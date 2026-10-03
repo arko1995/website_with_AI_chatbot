@@ -16,7 +16,7 @@ export default function ServicesSection({ services }) {
             CORE SERVICES */}
           </div>
 
-          <h2>From early strategy to construction-ready decisions.</h2>
+          <h2>Our Services</h2>
         </div>
 
         <div className="services-accordion">

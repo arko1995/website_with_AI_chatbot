@@ -1,10 +1,15 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
-export default function Footer({ location = 'Memphis, TN' }) {
+export default function Footer({ location = "Memphis, TN" }) {
   return (
     <footer className="footer">
       <div>
-        <div className="brand footer-brand"><span className="brand-mark">S</span><span>SKYLINE<span className="muted">DB3</span></span></div>
+        <Link to="/" className="footer-logo" aria-label="SkylineDB3 home">
+          <img
+            src={`${import.meta.env.BASE_URL}images/SkylineDB3.png`}
+            alt="SkylineDB3"
+          />
+        </Link>
         <p>Architecture that moves from idea to buildable reality.</p>
       </div>
       <div className="footer-links">
