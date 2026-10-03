@@ -39,7 +39,7 @@ const audiences = [
     title: "Investors & Financiers",
     subtitle: "Validate the future before you fund it.",
     description:
-      "Cost estimations, financial strategies, and photorealistic 3D showrooms provide greater clarity before capital is committed.",
+      "Cost estimations, financial strategies,Project proforma and photorealistic 3D showrooms provide greater clarity before capital is committed.",
   },
 ];
 
