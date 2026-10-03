@@ -16,7 +16,7 @@ export default function ServicesSection({ services }) {
             CORE SERVICES */}
           </div>
 
-          <h2>Our Services</h2>
+          <h2>Core Services</h2>
         </div>
 
         <div className="services-accordion">
