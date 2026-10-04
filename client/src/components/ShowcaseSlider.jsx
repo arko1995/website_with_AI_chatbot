@@ -8,7 +8,7 @@ const slides = [
   },
   {
     video: "animation/The Foundry 55 (Workforce Housing).mp4",
-    category: "Commercial",
+    category: "The Foundry 55",
     title: "Workforce Housing",
   },
   {

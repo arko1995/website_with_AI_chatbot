@@ -14,9 +14,10 @@ export default function Header() {
       </Link>
       <nav className="desktop-nav" aria-label="Primary navigation">
         <a href={`${home}#services`}>Services</a>
-        <a href={`${home}#projects`}>Work</a>
+        <a href={`${home}#projects`}>Projects</a>
         <Link to="/insights">Insights</Link>
         <a href={`${home}#contact`}>Contact</a>
+        <a href={`${home}#pricing`}>Pricing</a>
       </nav>
       <a className="header-cta" href={`${home}#contact`}>
         Start a project <span>↗</span>
