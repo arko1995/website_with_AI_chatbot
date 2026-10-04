@@ -243,11 +243,11 @@
         "description": "Deploying precise measuring tools to capture the exact dimensions, structural elements, and existing conditions of the physical site."
       },
       {
-        "title": "As-Built Documentation",
+        "title": "As Built Plans",
         "description": "Drafting highly accurate 2D floor plans and existing-condition data to serve as the flawless baseline for your renovation."
       },
       {
-        "title": "Proposed Design & Demolition Plans",
+        "title": "New Design & Demo Plans",
         "description": "Developing the new layout, indicating exactly what structural elements will be removed, and mapping the optimized spatial flow."
       },
       {
@@ -255,7 +255,7 @@
         "description": "Building a clean, functional digital model of the newly proposed layout to validate the design and spatial flow before final engineering."
       },
       {
-        "title": "Construction Documents & Permitting",
+        "title": "Final CDs & Permitting",
         "description": "Finalizing the technical blueprints and submitting the complete drawing set to the city for expedited permit approval."
       }
     ]
