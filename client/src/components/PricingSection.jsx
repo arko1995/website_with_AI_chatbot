@@ -323,9 +323,9 @@ export default function PricingSection() {
                   )}
                 </div>
 
-                <button type="button" className="button button-dark">
+                {/* <button type="button" className="button button-dark">
                   Request Custom Proposal
-                </button>
+                </button> */}
               </div>
             </div>
           )}

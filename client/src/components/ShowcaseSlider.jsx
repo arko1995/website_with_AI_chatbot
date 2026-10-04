@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 const slides = [
   {
@@ -31,10 +31,24 @@ const ShowcaseSlider = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((current) => (current + 1) % slides.length);
-    }, 7000);
+    }, 6000);
 
     return () => clearInterval(interval);
   }, []);
+
+  const videoRefs = useRef([]);
+
+  useEffect(() => {
+    videoRefs.current.forEach((video, index) => {
+      if (!video) return;
+
+      if (index === currentSlide) {
+        video.play().catch(() => {});
+      } else {
+        video.pause();
+      }
+    });
+  }, [currentSlide]);
 
   const goToPrevious = () => {
     setCurrentSlide((current) => (current - 1 + slides.length) % slides.length);
@@ -52,14 +66,17 @@ const ShowcaseSlider = () => {
           transform: `translateX(-${currentSlide * 100}%)`,
         }}
       >
-        {slides.map((slide) => (
+        {slides.map((slide, index) => (
           <div className="showcase-slide" key={slide.video}>
             <video
+              ref={(element) => {
+                videoRefs.current[index] = element;
+              }}
               src={`${basePath}${slide.video}`}
-              autoPlay
               muted
               loop
               playsInline
+              preload={index === currentSlide ? "auto" : "metadata"}
             />
 
             <div className="showcase-overlay">

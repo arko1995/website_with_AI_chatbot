@@ -68,7 +68,7 @@ export default function AudienceSection() {
                   <p>{audience.subtitle}</p>
                 </div>
 
-                <span className="audience-hint">EXPLORE +</span>
+                {/* <span className="audience-hint">EXPLORE +</span> */}
               </div>
 
               {/* BACK */}
