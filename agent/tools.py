@@ -89,7 +89,7 @@ TOOLKIT = types.Tool(
 )
 
 
-def _flatten(value, any) -> str:
+def _flatten(value: Any) -> str:
     if not value:
         return ""
 
@@ -126,7 +126,7 @@ def _rank(items: list[dict[str, Any]], query: str, limit: int = 4):
 
     terms = _terms(query)
 
-    scored = list[tuple[int, dict[str, Any]]] = []
+    scored: list[tuple[int, dict[str, Any]]] = []
 
     for item in items:
         haystack = _flatten(item, list).lower()
@@ -190,7 +190,7 @@ def execute_tool(
 
         matches = _rank(context.get("projects", []), str(args.get("query", "")))
 
-        return {"matches": _project_view(item) for item in matches}
+        return {"matches": [_project_view(item) for item in matches]}
 
     if name == "search_processes":
 

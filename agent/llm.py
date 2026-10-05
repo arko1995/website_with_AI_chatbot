@@ -5,13 +5,13 @@ from google import genai
 from google.genai import types
 from dotenv import load_dotenv
 
+load_dotenv()
+
 GEMINI_MODEL = "gemini-3.8-flash"
 
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
 
 client = genai.Client(api_key=GEMINI_API_KEY)
-
-load_dotenv()
 
 
 class Message(Protocol):
