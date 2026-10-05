@@ -26,14 +26,14 @@ def generate_reply(messages: Sequence[Message]) -> str:
         if message.role == "user":
             gemini_role = "user"
         elif message.role == "assistant":
-            gemini_role = "assistant"
+            gemini_role = "model"
 
         else:
             continue
 
-    contents.append(
-        types.Content(role=gemini_role, parts=[types.Part(text=message.content)])
-    )
+        contents.append(
+            types.Content(role=gemini_role, parts=[types.Part(text=message.content)])
+        )
 
     response = client.models.generate_content(
         model=GEMINI_MODEL,
