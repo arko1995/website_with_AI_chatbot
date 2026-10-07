@@ -213,6 +213,15 @@
   .hero-stage {
     height: 520px;
   }
+  .hero-stage::after {
+  background:
+    linear-gradient(
+      0deg,
+      rgba(8, 10, 9, .72) 0%,
+      rgba(8, 10, 9, .28) 38%,
+      rgba(8, 10, 9, .04) 70%
+    );
+}
 
   .hero-copy {
     left: 18px;

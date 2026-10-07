@@ -2,9 +2,9 @@ import { useEffect, useState, useRef } from "react";
 
 const slides = [
   {
-    video: "animation/1326 E (Living Room).mp4",
-    category: "Residential",
-    title: "Living Room",
+    video: "animation/E JOHNSON 01_720p.mp4",
+    category: "Commercial",
+    title: "Exterior",
   },
   {
     video: "animation/The Foundry 55 (Workforce Housing).mp4",

@@ -15,6 +15,8 @@ import AudienceSection from "../components/AudienceSection.jsx";
 import ServicesSection from "../components/ServicesSection.jsx";
 import ProcessSection from "../components/ProcessSection.jsx";
 import FeaturedProjects from "../components/FeaturedProjects.jsx";
+import YouTubeShowcase from "../components/YouTubeShowcase.jsx";
+
 export default function HomePage() {
   const [content, setContent] = useState(null);
   const [error, setError] = useState("");
@@ -40,7 +42,7 @@ export default function HomePage() {
       <Header />
 
       <HeroSection settings={settings} />
-
+      <YouTubeShowcase />
       <AudienceSection />
 
       <ServicesSection services={services} />
