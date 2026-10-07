@@ -72,7 +72,9 @@ const ShowcaseSlider = () => {
               ref={(element) => {
                 videoRefs.current[index] = element;
               }}
-              src={`${basePath}${slide.video}`}
+              src={
+                index === currentSlide ? `${basePath}${slide.video}` : undefined
+              }
               muted
               loop
               playsInline

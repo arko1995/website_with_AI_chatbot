@@ -3,13 +3,10 @@ import ShowcaseSlider from "./ShowcaseSlider.jsx";
 export default function HeroSection({ settings }) {
   return (
     <section className="hero shell">
-      <div className="hero-grid">
-        <div className="hero-copy">
-          <div className="eyebrow">
-            {/* <span>01</span>
-            {settings.eyebrow} */}
-          </div>
+      <div className="hero-stage">
+        <ShowcaseSlider />
 
+        <div className="hero-copy">
           <h1>{settings.heroTitle}</h1>
 
           <p className="hero-body">{settings.heroBody}</p>
@@ -23,9 +20,6 @@ export default function HeroSection({ settings }) {
               Discuss Your Vision ↓
             </a>
           </div>
-        </div>
-        <div className="hero-visual">
-          <ShowcaseSlider />
         </div>
       </div>
 
