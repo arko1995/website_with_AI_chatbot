@@ -42,7 +42,6 @@ export default function HomePage() {
       <Header />
 
       <HeroSection settings={settings} />
-      <YouTubeShowcase />
       <AudienceSection />
 
       <ServicesSection services={services} />
@@ -51,6 +50,7 @@ export default function HomePage() {
       {/* <FeaturedProjects projects={projects} /> */}
 
       <PricingSection />
+
       <section className="insights-section shell">
         <div className="section-heading split-heading">
           <div>
@@ -79,7 +79,7 @@ export default function HomePage() {
           ))}
         </div>
       </section>
-
+      <YouTubeShowcase />
       <section className="contact-section" id="contact">
         <div className="shell contact-grid">
           <div className="contact-copy">

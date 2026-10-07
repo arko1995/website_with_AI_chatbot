@@ -4,7 +4,6 @@ const YouTubeShowcase = ({ playlistId }) => {
   return (
     <section className="youtube-showcase">
       <div className="youtube-showcase-heading">
-        <span>SKYLINEDB3 / FILMS</span>
         <h2>See the work in motion</h2>
       </div>
       <div className="youtube-player">
