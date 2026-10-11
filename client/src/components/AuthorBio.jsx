@@ -14,9 +14,13 @@ export default function AuthorBio() {
           <span className="author-section-role">Architectural Designer</span>
 
           <p>
-            Author Name writes SkylineDB3’s insights on architecture,
-            visualization, design strategy, and turning ideas into buildable
-            outcomes.
+            As SkylineDB3’s Primary Designer, Bensalem Taki Eddine leads the
+            creative and architectural direction behind the company’s projects.
+            He translates client ideas, site requirements, and development goals
+            into clear, functional design solutions, supporting projects from
+            early concept development through visualization and technical
+            refinement. His work focuses on creating architecture that is both
+            visually compelling and grounded in real-world buildability.
           </p>
 
           <a

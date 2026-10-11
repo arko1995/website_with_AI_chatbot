@@ -2898,3 +2898,160 @@
     font-size: 36px;
   }
 }
+
+/* =========================
+   About The Author
+   ========================= */
+
+.author-section {
+  padding: 90px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.author-section-label {
+  margin-bottom: 34px;
+
+  color: var(--muted);
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.author-section-grid {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: 64px;
+  align-items: center;
+}
+
+.author-section-image {
+  width: 240px;
+  aspect-ratio: 1 / 1;
+
+  overflow: hidden;
+
+  background: var(--paper-2);
+}
+
+.author-section-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+.author-section-content {
+  max-width: 680px;
+}
+
+.author-section-content h2 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(42px, 4vw, 62px);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+}
+
+.author-section-role {
+  display: block;
+
+  margin-top: 12px;
+
+  color: var(--muted);
+
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.author-section-content p {
+  max-width: 580px;
+
+  margin: 28px 0 0;
+
+  color: #676a63;
+
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.author-section-link {
+  display: inline-block;
+
+  margin-top: 26px;
+  padding-bottom: 4px;
+
+  border-bottom: 1px solid currentColor;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  transition: opacity 0.2s ease;
+}
+
+.author-section-link:hover {
+  opacity: 0.55;
+}
+
+
+/* =========================
+   About The Author — Mobile
+   ========================= */
+
+@media (max-width: 680px) {
+
+  .author-section {
+    padding: 64px 0;
+  }
+
+  .author-section-label {
+    margin-bottom: 26px;
+
+    font-size: 9px;
+  }
+
+  .author-section-grid {
+    grid-template-columns: 92px minmax(0, 1fr);
+    gap: 18px;
+    align-items: start;
+  }
+
+  .author-section-image {
+    width: 92px;
+  }
+
+  .author-section-content h2 {
+    font-size: 28px;
+    line-height: 0.98;
+  }
+
+  .author-section-role {
+    margin-top: 8px;
+
+    font-size: 8px;
+    line-height: 1.4;
+  }
+
+  .author-section-content p {
+    grid-column: 1 / -1;
+
+    margin-top: 18px;
+
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .author-section-link {
+    margin-top: 18px;
+
+    font-size: 10px;
+  }
+}
