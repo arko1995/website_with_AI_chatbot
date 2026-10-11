@@ -1,24 +1,24 @@
 const audiences = [
   {
     number: "01",
-    title: "Homeowners",
-    subtitle: "See your dream home before it is built.",
-    description:
-      "From custom builds to renovations, we turn your ideas into photorealistic 3D models and precise plans so you can make confident decisions before construction begins.",
-  },
-  {
-    number: "02",
     title: "Landowners",
     subtitle: "Unlock the full potential of your property.",
     description:
       "We evaluate feasibility, zoning, and masterplanning opportunities to help you understand what your land can support and how to maximize its potential.",
   },
   {
-    number: "03",
+    number: "02",
     title: "Real Estate Developers",
     subtitle: "Protect your ROI and speed up your timeline.",
     description:
       "We align design decisions with budgets, development goals, and market-ready 3D deliverables to support efficient planning and confident execution.",
+  },
+  {
+    number: "03",
+    title: "Homeowners",
+    subtitle: "See your dream home before it is built.",
+    description:
+      "From custom builds to renovations, we turn your ideas into photorealistic 3D models and precise plans so you can make confident decisions before construction begins.",
   },
   {
     number: "04",

@@ -2604,6 +2604,15 @@
   min-width: 230px;
 }
 
+.footer-location {
+  display: block;
+  margin-top: 18px;
+
+  color: #838880;
+
+  font-size: 11px;
+  line-height: 1.5;
+}
 
 /* Responsive */
 

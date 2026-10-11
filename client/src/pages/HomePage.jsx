@@ -16,7 +16,7 @@ import ServicesSection from "../components/ServicesSection.jsx";
 import ProcessSection from "../components/ProcessSection.jsx";
 import FeaturedProjects from "../components/FeaturedProjects.jsx";
 import YouTubeShowcase from "../components/YouTubeShowcase.jsx";
-
+import AuthorBio from "../components/AuthorBio.jsx";
 export default function HomePage() {
   const [content, setContent] = useState(null);
   const [error, setError] = useState("");
@@ -79,6 +79,8 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+
+      <AuthorBio />
       <YouTubeShowcase />
       <section className="contact-section" id="contact">
         <div className="shell contact-grid">

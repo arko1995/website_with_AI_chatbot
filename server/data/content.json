@@ -9,9 +9,21 @@
     "whatsappNumber": ""
   },
   "services": [
+    {
+      "slug": "architectural-visualization-marketing-assets",
+      "index": "01",
+      "title": "Architectural Visualization & Marketing Assets",
+      "short": "",
+      "body": "See the future before you fund it. We create premium, photorealistic digital assets designed to secure investors, win municipal approvals, and drive pre-sales.",
+      "features": [
+        "High-Fidelity 3D Exterior & Interior Renders",
+        "Interactive 3D Walkthroughs & Showrooms",
+        "Market-Ready Visuals for Investor Pitches"
+      ]
+    },
   {
     "slug": "land-planning-masterplanning",
-    "index": "01",
+    "index": "02",
     "title": "Land Planning & Masterplanning",
     "short": "",
     "body": "We lay the strategic groundwork for long-term success. Before a single building is designed, we optimize your land to maximize usability, compliance, and property value.",
@@ -23,7 +35,7 @@
   },
   {
     "slug": "architectural-design-documentation",
-    "index": "02",
+    "index": "03",
     "title": "Architectural Design & Documentation",
     "short": "",
     "body": "Translating ambitious concepts into flawless technical reality. We provide the exact specifications required by contractors and municipalities to build safely and efficiently.",
@@ -35,7 +47,7 @@
   },
   {
     "slug": "cost-estimation-budget-strategy",
-    "index": "03",
+    "index": "04",
     "title": "Cost Estimation & Budget Strategy",
     "short": "",
     "body": "Stop guessing on construction costs. We integrate predictive financial forecasting directly into the design phase to ensure your project stays profitable and buildable.",
@@ -43,18 +55,6 @@
       "Pre-Construction Cost Forecasting",
       "Value Engineering (Optimizing aesthetics while lowering costs)",
       "Material & Labor Budget Alignment"
-    ]
-  },
-  {
-    "slug": "architectural-visualization-marketing-assets",
-    "index": "04",
-    "title": "Architectural Visualization & Marketing Assets",
-    "short": "",
-    "body": "See the future before you fund it. We create premium, photorealistic digital assets designed to secure investors, win municipal approvals, and drive pre-sales.",
-    "features": [
-      "High-Fidelity 3D Exterior & Interior Renders",
-      "Interactive 3D Walkthroughs & Showrooms",
-      "Market-Ready Visuals for Investor Pitches"
     ]
   },
   {
