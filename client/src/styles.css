@@ -2910,7 +2910,8 @@
 }
 
 .author-section-label {
-  margin-bottom: 34px;
+  width: min(900px, 100%);
+  margin: 0 auto 34px;
 
   color: var(--muted);
 
@@ -2922,8 +2923,11 @@
 .author-section-grid {
   display: grid;
   grid-template-columns: 240px minmax(0, 1fr);
-  gap: 64px;
+  gap: 54px;
   align-items: center;
+
+  width: min(900px, 100%);
+  margin: 0 auto;
 }
 
 .author-section-image {
