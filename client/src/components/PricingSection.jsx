@@ -79,7 +79,7 @@ const packageGroups = [
           "The fastest way to get measured, legally approved, and ready for demolition.",
         includes: [
           {
-            name: "Site Survey & As-Built Documentation",
+            name: "Site Plan & As-Built Documentation",
             price: 900,
           },
           {
