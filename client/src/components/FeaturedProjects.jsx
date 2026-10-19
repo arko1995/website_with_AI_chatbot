@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { Link } from "react-router-dom";
 export default function FeaturedProjects({ projects }) {
   const [activeProjectIndex, setActiveProjectIndex] = useState(0);
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
@@ -40,7 +40,10 @@ export default function FeaturedProjects({ projects }) {
             FEATURED PROJECTS */}
           </div>
 
-          <h2>Featured Projects</h2>
+          <h2>Impact Projects</h2>
+          {activeProject.impact && (
+            <p className="featured-project-impact">{activeProject.impact}</p>
+          )}
         </div>
 
         <div className="featured-project-main">
@@ -97,6 +100,14 @@ export default function FeaturedProjects({ projects }) {
                 ))}
               </div>
             )}
+
+            <Link
+              className="featured-project-link"
+              to={`/projects${activeProject.slug}`}
+            >
+              {" "}
+              Explore Project →
+            </Link>
           </div>
         </div>
 
