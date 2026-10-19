@@ -3059,3 +3059,189 @@
     font-size: 10px;
   }
 }
+
+
+/* Impact Projects — Homepage */
+
+.featured-project-impact {
+  margin-top: 14px !important;
+  max-width: 470px;
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.featured-project-link {
+  display: inline-block;
+  margin-top: 22px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--acid);
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.featured-project-link:hover {
+  color: var(--acid);
+}
+
+
+/* Impact Project — Detail Page */
+
+.impact-project-cover {
+  margin-top: 35px;
+}
+
+.impact-project-cover img {
+  display: block;
+  width: 100%;
+  max-height: 720px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.impact-project-overview {
+  display: grid;
+  grid-template-columns: 1.5fr 0.7fr;
+  gap: 80px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.impact-project-label {
+  display: block;
+  margin-bottom: 24px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.impact-project-overview h2,
+.impact-project-outcome h2,
+.impact-project-gallery h2,
+.impact-project-cta h2 {
+  margin: 0 0 28px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(38px, 5vw, 64px);
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+.impact-project-overview p,
+.impact-project-outcome p {
+  max-width: 720px;
+  color: #676a63;
+  font-size: 17px;
+  line-height: 1.8;
+  white-space: pre-line;
+}
+
+.impact-project-facts {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 26px;
+  border-top: 1px solid var(--line);
+}
+
+.impact-project-facts > span {
+  margin-top: 15px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+}
+
+.impact-project-facts strong {
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.impact-project-facts p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.impact-project-outcome {
+  padding-top: 80px;
+  padding-bottom: 90px;
+  border-top: 1px solid var(--line);
+}
+
+.impact-project-gallery {
+  padding-top: 70px;
+  padding-bottom: 100px;
+}
+
+.impact-project-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.impact-project-gallery figure {
+  margin: 0;
+}
+
+.impact-project-gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.impact-project-gallery figcaption {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.impact-project-cta {
+  padding-top: 70px;
+  padding-bottom: 110px;
+  border-top: 1px solid var(--line);
+}
+
+@media (max-width: 680px) {
+  .impact-project-cover {
+    margin-top: 24px;
+  }
+
+  .impact-project-cover img {
+    aspect-ratio: 4 / 3;
+  }
+
+  .impact-project-overview {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .impact-project-outcome {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .impact-project-gallery {
+    padding-top: 50px;
+    padding-bottom: 60px;
+  }
+
+  .impact-project-gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .impact-project-cta {
+    padding-top: 55px;
+    padding-bottom: 70px;
+  }
+
+  .featured-project-impact {
+    font-size: 11px;
+  }
+}

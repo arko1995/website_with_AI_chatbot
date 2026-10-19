@@ -1,4 +1,4 @@
-export default function ProjectVisual({ type = 'grid', label = '' }) {
+export default function ProjectVisual({ type = "grid", label = "" }) {
   return (
     <div className={`project-visual visual-${type}`} aria-label={label}>
       <span className="visual-line line-a" />
