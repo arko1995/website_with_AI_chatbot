@@ -94,10 +94,10 @@ def _flatten(value: Any) -> str:
         return ""
 
     if isinstance(value, dict):
-        return " ".join(_flatten(item, dict) for item in value.values())
+        return " ".join(_flatten(item) for item in value.values())
 
     if isinstance(value, list):
-        return " ".join(_flatten(item, list) for item in value)
+        return " ".join(_flatten(item) for item in value)
 
     return str(value)
 
@@ -129,7 +129,7 @@ def _rank(items: list[dict[str, Any]], query: str, limit: int = 4):
     scored: list[tuple[int, dict[str, Any]]] = []
 
     for item in items:
-        haystack = _flatten(item, list).lower()
+        haystack = _flatten(item).lower()
 
         score = sum(haystack.count(term) for term in terms)
 
@@ -152,7 +152,7 @@ def _service_view(
         "slug": item.get("slug"),
         "title": item.get("title"),
         "body": item.get("body"),
-        "featured": item.get("features", []),
+        "features": item.get("features", []),
     }
 
 
@@ -164,6 +164,7 @@ def _project_view(item: dict[str, Any]) -> dict[str, Any]:
         "tagline": item.get("tagline"),
         "metric": item.get("metric"),
         "services": item.get("services", []),
+        "type": item.get("type"),
     }
 
 
@@ -200,6 +201,6 @@ def execute_tool(
 
     if name == "get_company_info":
 
-        return {"settings": context.get("settings", [])}
+        return {"settings": context.get("settings", {})}
 
     return {"error": f"unknown tool {name}"}
