@@ -89,23 +89,28 @@
       {
         "type": "render",
         "label": "Photorealistic Render",
-        "src": ""
+        "src": "https://res.cloudinary.com/ugljg5y6/image/upload/v1792945911/Scene_23_1__style_transfer02.png"
       },
       {
         "type": "model",
         "label": "3D Model",
-        "src": ""
+        "src": "https://res.cloudinary.com/ugljg5y6/image/upload/v1792945645/Scene_26_style_transfer02.png"
       },
       {
         "type": "floorplan",
         "label": "Site Plan",
-        "src": ""
+        "src": "https://res.cloudinary.com/ugljg5y6/image/upload/v1792945647/Scene_30_style_transfer01.png"
+      },
+       {
+        "type": "floorplan",
+        "label": "Site Plan",
+        "src": "https://res.cloudinary.com/ugljg5y6/image/upload/v1792945643/Image_2__style_transfer01.png"
       }
     ]
   },
   {
-    "slug": "vertex-villa",
-    "name": "The Vertex Villa",
+    "slug": "1400 maddison",
+    "name": "1400 Maddison",
     "type": "Residential Architecture",
     "tagline": "A high-efficiency luxury residence shaped by light and environmental integration.",
     "metric": "4,500 sq ft · 4 bed · 5.5 bath",
@@ -121,23 +126,23 @@
       {
         "type": "render",
         "label": "Photorealistic Render",
-        "src": ""
+        "src": "https://res.cloudinary.com/ugljg5y6/image/upload/v1792945993/RNDR02.png"
       },
       {
         "type": "model",
         "label": "3D Model",
-        "src": ""
+        "src": "https://res.cloudinary.com/ugljg5y6/image/upload/v1792945987/1400_N_Madison_Model_DD_REVISED4.png"
       },
       {
         "type": "floorplan",
         "label": "Floor Plan",
-        "src": ""
+        "src": "https://res.cloudinary.com/ugljg5y6/image/upload/v1792945983/1400_N_Madison_Model_DD_REVISEDFPISO.png"
       }
     ]
   },
   {
-    "slug": "verde-private-estate",
-    "name": "Verde Private Estate",
+    "slug": "covington",
+    "name": "Covington",
     "type": "Private Residential",
     "tagline": "A private estate concept balancing strong geometry with landscape.",
     "metric": "Architecture + Visualization",
@@ -153,18 +158,47 @@
       {
         "type": "render",
         "label": "Photorealistic Render",
-        "src": ""
+        "src": "https://res.cloudinary.com/ugljg5y6/image/upload/v1792946014/TownHome_STYLE_2_iso.jpg"
       },
       {
         "type": "model",
         "label": "3D Model",
-        "src": ""
+        "src": "https://res.cloudinary.com/ugljg5y6/image/upload/v1792946017/Townhouse_2_ISO.jpg"
+      }
+     
+    ]
+  },
+    {
+    "slug": "walsh-cove",
+    "name": "Walsh_cove",
+    "type": "Private Residential",
+    "tagline": "A private estate concept balancing strong geometry with landscape.",
+    "metric": "Architecture + Visualization",
+    "visual": "arc",
+    "services": [
+      "Architectural Design & Documentation",
+      "Architectural Visualization & Marketing Assets"
+    ],
+     "description":"",
+    "impact":"",
+    "thumbnail": "",
+    "slides": [
+      {
+        "type": "render",
+        "label": "Photorealistic Render",
+        "src": "https://res.cloudinary.com/ugljg5y6/image/upload/v1792945495/persp01.png"
       },
       {
-        "type": "floorplan",
-        "label": "Floor Plan",
-        "src": ""
+        "type": "model",
+        "label": "3D Model",
+        "src": "https://res.cloudinary.com/ugljg5y6/image/upload/v1792945492/1495_Walsh_COVE_01.png"
+      },
+      {
+        "type": "model",
+        "label": "3D Model",
+        "src": "https://res.cloudinary.com/ugljg5y6/image/upload/v1792945492/1495_Walsh_COVE_08_12_2026_FP.png"
       }
+     
     ]
   }
 ],
