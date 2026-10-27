@@ -90,7 +90,7 @@ TOOLKIT = types.Tool(
 
 
 def _flatten(value: Any) -> str:
-    if not value:
+    if value is None:
         return ""
 
     if isinstance(value, dict):
