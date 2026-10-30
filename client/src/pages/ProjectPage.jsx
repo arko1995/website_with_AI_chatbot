@@ -11,23 +11,26 @@ export default function ProjectPage() {
   const [data, setData] = useState(null);
   const [error, setError] = useState("");
 
-  useEffect(async () => {
+  useEffect(() => {
+    let cancelled = false;
     setData(null);
     setError("");
 
-    let cancelled = false;
+    async function loadProject() {
+      try {
+        const result = await api.project(slug);
 
-    try {
-      const result = await api.project(slug);
-
-      if (!cancelled) {
-        setData(result);
-      }
-    } catch (error) {
-      if (!cancelled) {
-        setError(error.message);
+        if (!cancelled) {
+          setData(result);
+        }
+      } catch (error) {
+        if (!cancelled) {
+          setError(error.message);
+        }
       }
     }
+
+    loadProject();
 
     return () => {
       cancelled = true;
