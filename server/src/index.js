@@ -176,7 +176,7 @@ app.get("/sitemap.xml", async (req, res, next) => {
 
     const paths = [
       "/",
-      "/insight",
+      "/insights",
       ...content.services.map((item) => `/services/${item.slug}`),
       ...content.projects.map((item) => `/projects/${item.slug}`),
       ...content.posts.map((item) => `/insights/${item.slug}`),
