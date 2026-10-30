@@ -179,7 +179,7 @@ app.get("/sitemap.xml", async (req, res, next) => {
       "/insight",
       ...content.services.map((item) => `/services/${item.slug}`),
       ...content.projects.map((item) => `/projects/${item.slug}`),
-      ...content.posts.map((item) => `/posts/${item.slug}`),
+      ...content.posts.map((item) => `/insights/${item.slug}`),
     ];
 
     const xml = `<?xml version="1.0" encoding="UTF-8"?>
