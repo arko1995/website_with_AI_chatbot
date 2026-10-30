@@ -18,7 +18,7 @@ export default function ProjectPage() {
     let cancelled = false;
 
     try {
-      result = await api.project(slug);
+      const result = await api.project(slug);
 
       if (!cancelled) {
         setData(result);
