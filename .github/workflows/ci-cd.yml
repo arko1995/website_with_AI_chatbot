@@ -124,9 +124,9 @@ jobs:
             docker compose -f compose.prod.yml ps
             curl --fail \
                  --retry 12 \
-                  --retry-delay 5 \
-                  --retry-all-errors \
-                  --connect-timeout 5 \
-                  http://127.0.0.1:5000/api/health
+                 --retry-delay 5 \
+                 --retry-all-errors \
+                 --connect-timeout 5 \
+                 http://127.0.0.1:5000/api/health
             docker image prune -f
           EOF
