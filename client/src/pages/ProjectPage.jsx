@@ -41,7 +41,7 @@ export default function ProjectPage() {
   if (!data) return <Loading />;
   const { project, settings } = data;
 
-  const images = (project.slide || []).filter((slide) => slide.src);
+  const images = (project.slides || []).filter((slide) => slide.src);
 
   const cover = images[0]?.src || project.thumbnail;
 

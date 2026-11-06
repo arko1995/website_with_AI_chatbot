@@ -103,7 +103,7 @@ export default function FeaturedProjects({ projects }) {
 
             <Link
               className="featured-project-link"
-              to={`/projects${activeProject.slug}`}
+              to={`/projects/${activeProject.slug}`}
             >
               {" "}
               Explore Project →
