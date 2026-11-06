@@ -5,7 +5,10 @@ export default function AuthorBio() {
 
       <div className="author-section-grid">
         <div className="author-section-image">
-          <img src="/images/author.jpg" alt="Author Name" />
+          <img
+            src="https://res.cloudinary.com/ugljg5y6/image/upload/v1793962766/image_6a05c3b6.jpg.jpg"
+            alt="Author Name"
+          />
         </div>
 
         <div className="author-section-content">
