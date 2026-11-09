@@ -1,18 +1,20 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+
 import Header from "../components/Header.jsx";
 import Footer from "../components/Footer.jsx";
-import ProjectVisual from "../components/ProjectVisual.jsx";
 import Loading from "../components/Loading.jsx";
 import { api } from "../api.js";
 
 export default function ProjectPage() {
   const { slug } = useParams();
+
   const [data, setData] = useState(null);
   const [error, setError] = useState("");
 
   useEffect(() => {
     let cancelled = false;
+
     setData(null);
     setError("");
 
@@ -23,9 +25,9 @@ export default function ProjectPage() {
         if (!cancelled) {
           setData(result);
         }
-      } catch (error) {
+      } catch (err) {
         if (!cancelled) {
-          setError(error.message);
+          setError(err.message);
         }
       }
     }
@@ -37,13 +39,26 @@ export default function ProjectPage() {
     };
   }, [slug]);
 
-  if (error) return <Loading label={error} />;
+  if (error) {
+    return (
+      <main>
+        <Header />
+        <section className="detail-hero shell">
+          <h1>Project unavailable</h1>
+          <p>{error}</p>
+          <Link to="/#projects">Back to Projects</Link>
+        </section>
+      </main>
+    );
+  }
+
   if (!data) return <Loading />;
+
   const { project, settings } = data;
 
-  const images = (project.slides || []).filter((slide) => slide.src);
+  const images = (project.slides || []).filter((slide) => slide?.src?.trim());
 
-  const cover = images[0]?.src || project.thumbnail;
+  const cover = images[0]?.src || project.thumbnail || "";
 
   return (
     <main>
@@ -57,7 +72,8 @@ export default function ProjectPage() {
           </div>
 
           <h1>{project.name}</h1>
-          <p>{project.tagline}</p>
+
+          {project.tagline && <p>{project.tagline}</p>}
         </section>
 
         {cover && (
@@ -76,7 +92,11 @@ export default function ProjectPage() {
 
             <h2>Project Overview</h2>
 
-            {project.description && <p>{project.description}</p>}
+            {project.description ? (
+              <p>{project.description}</p>
+            ) : (
+              <p>{project.tagline || project.name}</p>
+            )}
           </div>
 
           <aside className="impact-project-facts">
@@ -93,6 +113,7 @@ export default function ProjectPage() {
             {project.services?.length > 0 && (
               <>
                 <span>SERVICES</span>
+
                 {project.services.map((service) => (
                   <p key={service}>{service}</p>
                 ))}
@@ -141,7 +162,7 @@ export default function ProjectPage() {
         </section>
       </article>
 
-      <Footer location={settings.location} />
+      <Footer location={settings?.location} />
     </main>
   );
 }
