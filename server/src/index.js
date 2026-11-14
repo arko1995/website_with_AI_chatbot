@@ -15,6 +15,8 @@ import {
   requireAdmin,
   setAdminSessionCookie,
 } from "./auth.js";
+import { uploadCover, uploadToCloudinary } from "./cloudinary.js";
+import { error } from "console";
 
 const app = express();
 const port = Number(process.env.PORT || 5000);
@@ -199,6 +201,39 @@ ${paths
     next(error);
   }
 });
+
+app.post(
+  "/api/admin/upload/blog-cover",
+  requireAdmin,
+  (req, res, next) => {
+    uploadCover.single("image")(req, res, (error) => {
+      if (error) {
+        return res.status(400).json({
+          error: error.message,
+        });
+      }
+      next();
+    });
+  },
+  async (req, res, next) => {
+    try {
+      if (!req.file) {
+        return res.status(500).json({
+          error: "Please Select an image",
+        });
+      }
+
+      const image = await uploadToCloudinary(req.file.buffer);
+
+      return res.status(201).json({
+        success: true,
+        image,
+      });
+    } catch (error) {
+      next(error);
+    }
+  },
+);
 
 app.use(express.static(clientDist));
 app.get("*", (req, res, next) => {
